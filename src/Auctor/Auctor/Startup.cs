@@ -16,7 +16,7 @@ namespace VolskNet.Auctor
     using System.Web.Cors;
     using System.Web.Http;
 
-    public class Startup
+    internal class Startup
     {
         private const string DEFAULT_DOCUMENT = "index.html";
         private const string ERROR_DOCUMENT = "error.html";

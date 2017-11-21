@@ -5,7 +5,7 @@
     using Newtonsoft.Json.Serialization;
     using System;
 
-    internal class SettingsHelper
+    internal static class SettingsHelper
     {
         private static readonly JsonSerializerSettings serializerSettings = new JsonSerializerSettings
         {
