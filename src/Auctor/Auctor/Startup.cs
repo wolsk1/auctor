@@ -1,6 +1,7 @@
 ﻿[assembly: Microsoft.Owin.OwinStartup(typeof(VolskNet.Auctor.Startup))]
 namespace VolskNet.Auctor
 {
+    using AutoMapper;
     using Autofac;
     using Microsoft.Owin;
     using Microsoft.Owin.Cors;
@@ -16,32 +17,29 @@ namespace VolskNet.Auctor
     using System.Web.Cors;
     using System.Web.Http;
 
-    internal class Startup
+    public class Startup
     {
         private const string DEFAULT_DOCUMENT = "index.html";
         private const string ERROR_DOCUMENT = "error.html";
 
         private static readonly Regex file = new Regex(
            @"(?i)\.[a-z0-9]+(\?\S+)?$",
-           RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);       
+           RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "Startup class")]
         public void Configuration(IAppBuilder app)
         {
             var wwwroot = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "wwwroot");
-            AutofacInit.Initialize();
-            var configurator = Configure(wwwroot, AutofacInit.AutofacContainer);
-            configurator(app);
-
-            //var mapProfile = new MappingProfile();
-            //Mapper.Initialize(cfg => cfg.AddProfile(mapProfile));
+            AutofacInitializer.Initialize();
+            var configurator = Configure(wwwroot, AutofacInitializer.AutofacContainer);
+            configurator(app);            
         }
 
         public static Action<IAppBuilder> Configure(string wwwroot, IContainer container)
         {
             return app =>
             {
-                if (Settings.ShowErrorPage)
+                if (AppSettings.ShowErrorPage)
                 {
                     app.UseErrorPage();
                 }
@@ -59,7 +57,7 @@ namespace VolskNet.Auctor
 
         private static void ConfigureCors(IAppBuilder app)
         {
-            if (Settings.CorsEnabled)
+            if (AppSettings.CorsEnabled)
             {
                 app.UseCors(GetCorsOptions());
             }
@@ -67,7 +65,7 @@ namespace VolskNet.Auctor
 
         private static void ConfigureApiService(IAppBuilder app, HttpConfiguration httpConfiguration)
         {
-            app.Map($"/{Settings.ApiPrefix}", pipeline =>
+            app.Map($"/{AppSettings.ApiPrefix}", pipeline =>
             {
                 pipeline.UseWebApi(httpConfiguration);
             });
@@ -75,7 +73,7 @@ namespace VolskNet.Auctor
 
         private static void ConfigureWebPages(IAppBuilder app, string wwwroot)
         {
-            app.Map("/app", pipeline =>
+            app.Map("/auctor", pipeline =>
             {
                 pipeline.Use((context, next) =>
                 {
@@ -83,7 +81,7 @@ namespace VolskNet.Auctor
 
                     return SendHtmlFile(
                         context,
-                        path.Substring(0, path.LastIndexOf("/app", StringComparison.OrdinalIgnoreCase)),
+                        path.Substring(0, path.LastIndexOf("/steering", StringComparison.OrdinalIgnoreCase)),
                         Path.Combine(wwwroot, DEFAULT_DOCUMENT));
                 });
             });
@@ -138,11 +136,11 @@ namespace VolskNet.Auctor
         {
             var basePath = originBasePath.Trim('/') + "/";
 
-            string appSettings;
+            string appSettings;           
 
             try
-            {
-                appSettings = SettingsHelper.LoadAppSettings(context.Request);
+            {                
+                appSettings = SettingsHelper.LoadAppSettings(context.Request);                
             }
             catch (WebException)
             {
@@ -152,7 +150,7 @@ namespace VolskNet.Auctor
 
             var body = File
                 .ReadAllText(filePath)
-                .Replace("</head>", $"<script id='appSettings' type='application/javascript'>var _appSettings = {appSettings};</script></head>")
+                .Replace("</head>", $"<script id='appSettings' type='application/javascript'>var _appSettings = {appSettings};</script></head>")                
                 .Replace("$HTTP_STATUS$", $"{(int)statusCode} {statusCode}");
 
             if (basePath != "/")
@@ -170,16 +168,16 @@ namespace VolskNet.Auctor
 
         private static CorsOptions GetCorsOptions()
         {
-            var headers = Settings.CorsAllowedHeaders;
-            var methods = Settings.CorsAllowedMethods;
-            var origins = Settings.CorsAllowedOrigins;
+            var headers = AppSettings.CorsAllowedHeaders;
+            var methods = AppSettings.CorsAllowedMethods;
+            var origins = AppSettings.CorsAllowedOrigins;
 
             var corsPolicy = new CorsPolicy
             {
                 AllowAnyHeader = headers.Length == 0,
                 AllowAnyMethod = methods.Length == 0,
                 AllowAnyOrigin = origins.Length == 0,
-                SupportsCredentials = Settings.CorsSupportsCredentials
+                SupportsCredentials = AppSettings.CorsSupportsCredentials
             };
 
             if (!corsPolicy.AllowAnyHeader)

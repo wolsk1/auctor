@@ -1,6 +1,6 @@
 ﻿namespace VolskNet.Auctor
 {
-    public static class Settings
+    public static class AppSettings
     {
         internal static readonly bool CorsEnabled = Utils.GetAppSettingsValue("cors:enabled", true);
 

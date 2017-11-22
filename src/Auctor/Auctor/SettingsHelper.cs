@@ -25,8 +25,8 @@
             return JsonConvert.SerializeObject(new
             {
                 Version = version,
-                BasePath = Settings.BaseHref,
-                ApiPath = $"{request.Scheme}://{request.Host.Value}/{Settings.ApiPrefix}",
+                BasePath = AppSettings.BaseHref,
+                ApiPath = $"{request.Scheme}://{request.Host.Value}/{AppSettings.ApiPrefix}",
                 ConnectionProtocol = request.Scheme
             }, serializerSettings);
         }
