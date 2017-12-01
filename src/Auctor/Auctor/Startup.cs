@@ -1,7 +1,6 @@
 ﻿[assembly: Microsoft.Owin.OwinStartup(typeof(VolskNet.Auctor.Startup))]
 namespace VolskNet.Auctor
-{
-    using AutoMapper;
+{   
     using Autofac;
     using Microsoft.Owin;
     using Microsoft.Owin.Cors;

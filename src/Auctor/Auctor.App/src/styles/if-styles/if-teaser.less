@@ -1,0 +1,66 @@
+.ecmt-teaser {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.ecmt-teaser-hoverstate {
+    position: relative;
+}
+
+.ecmt-teaser-hoverstate .ecmt-teaser-image {
+    position: relative;
+}
+
+.ecmt-teaser-image-is-round {
+    -webkit-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+    max-width: 200px;
+}
+
+.ecmt-teaser-image {
+    margin: 0 auto 20px;
+    text-align: center;
+    display: block;
+    position: relative;
+}
+
+.ecmt-teaser-image-is-round:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.ecmt-teaser-hoverstate .ecmt-teaser-image:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    -webkit-transition: background .2s;
+    -o-transition: background .2s;
+    transition: background .2s;
+}
+
+.ecmt-teaser-image-is-round:after {
+    -webkit-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.ecmt-teaser-image-is-round .product {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    -webkit-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+}

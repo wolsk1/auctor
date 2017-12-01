@@ -1,0 +1,44 @@
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+
+.col-centered {
+    float: none;
+    display:inline-block;
+    text-align:center;
+    margin-right:-4px;
+    vertical-align: top;
+}
+
+@media all and (min-width:1200px){
+    .hidden-lg-down {
+
+    }
+
+    .hidden-lg-up {
+        height: 0;
+        width: 0;
+    }
+}
+
+@media all and (max-width:1200px){
+    .hidden-lg-down {
+        height: 0;
+        width: 0;
+    }
+
+    .hidden-lg-up {
+        display: block;
+    }
+}
+
+@media all and (max-width:768px)
+{
+   .col-xs-justified{
+       text-align:justify;
+   }
+   .col-xs-centered{
+       text-align:center;
+   }
+}

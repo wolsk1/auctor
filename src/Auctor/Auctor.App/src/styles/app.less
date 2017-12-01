@@ -1,0 +1,143 @@
+header {
+    display: block;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 100;
+    margin-bottom: 1em;
+    margin-top: .5em;
+}
+
+h3{
+    margin: 0 0 .5em;
+    line-height: 1.2em;
+    color: inherit;
+    font-family: "GarageGothic-Bold", "Open Sans", Arial, serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0 0 .5em;
+    line-height: 1.2em;
+    color: inherit;
+    font-family: "Open Sans",Arial,sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title {
+    font-family: "GarageGothic-Bold","Open Sans",Arial,serif;
+    text-transform: uppercase;
+    font-size: 36px!important
+}
+
+.main {
+    padding-bottom: 20px;
+}
+
+.background-greenblue{
+    background-color: #78bbb2;
+}
+
+.color-white{
+    color: #fff;
+}
+
+.header {
+    margin: auto;
+    text-align: center;
+
+    .header-top{
+        padding: 0;
+        position: relative;
+    }
+
+    #navigation{
+        ul{
+            display: table;
+            width: 100%;
+            li{
+                display: table-cell;
+            }
+        }
+        padding: 20px 0;
+        li.active{
+            background-color: transparent;
+            color: #000;
+            font-weight: 700;
+        }
+    }
+}
+
+
+.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	a {
+		display: inline-block;
+	}
+	li {
+		margin: 0;
+		&.row {
+			margin: 0 -15px;
+		}
+	}
+}
+
+.navbar-default {
+    width: 220px;
+    height: 100%;
+    overflow: auto;
+    order: -1;
+
+    .logo-element {
+        text-align: left;
+        font-size: 1.25em;
+        padding: 0 25px;
+        height: 60px;
+        display: table-cell;
+        width: 220px;
+        vertical-align: middle;
+    }
+}
+
+.navbar-minimalize {
+    margin-left: 25px;
+}
+
+.info-text {
+    margin-right:2px;
+}
+
+.ecmt-toggle-area-animate {
+    display: block;
+    overflow: hidden;
+    -webkit-transition:all .3s;
+    -o-transition:all .3s;
+    transition:all .3s
+}
+
+.language-link {
+    white-space:nowrap;
+}
+
+@import './common.less';
+@import './flex.less';
+@import './loader.less';
+@import './fonts.less';
+@import './buttons.less';
+@import './forms.less';
+@import './grid.less';
+@import './flags.less';
+@import './result-list.less';
+@import './map.less';
+@import './navigation.less';
+@import './arrow.less';
+@import './products.less';
+@import './collapsable.less';
+@import './overlay.less';
+@import './spinner.less';
+@import './footer.less';

@@ -1,0 +1,75 @@
+.ecmt-page {
+    background: #fff;
+    overflow: hidden;
+    font-family: "Open Sans",Arial,sans-serif;
+    line-height: 1.575em;
+    font-size: 14px;
+    color: #333;
+}
+
+.ecmt-container {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.ecmt-page-wrapper {
+    position: relative;
+    margin: 0 auto;
+}
+
+.ecmt-page-text-container {
+    width: 750px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.ecmt-page-container {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.ecmt-page img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.ecmt-page-container:after {
+	height: 0px;
+    clear: both;
+    display: table;
+    content: "";
+}
+
+@media (max-width: 660px){
+     .ecmt-page-container,  .ecmt-page-text-container {
+        max-width: 500px;
+        width: auto;
+    }
+}
+
+@media (max-width: 990px){
+    .ecmt-page-container {
+        max-width: 720px;
+        width: auto;
+    }
+}
+
+@media (max-width: 980px)
+{
+     .ecmt-page-wrapper {
+        min-width: 0;
+        width: auto;
+    }
+
+}
+
+@media (min-width: 981px){
+    .ecmt-page-text-container {
+        max-width: 750px;
+        width: auto;
+    }
+}
+
+

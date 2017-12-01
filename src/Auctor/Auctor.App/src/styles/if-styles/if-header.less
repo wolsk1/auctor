@@ -1,0 +1,121 @@
+.ecmt-page-header {
+    padding: 20px 5px 0;
+    position: relative;
+}
+
+.ecmt-page-nonav .ecmt-page-header {
+    padding-bottom: 20px
+}
+
+.ecmt-page-header-tools, .ecmt-page-header-settings {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px 20px;
+    color: #999;
+    font-size: 13px;
+}
+
+.ecmt-page-header .ecmt-page-header-logotype {
+    margin-bottom: 5px;
+}
+
+.ecmt-page-header-settings {
+    right: auto;
+    left: 0;
+}
+
+.ecmt-page-header-tools a,
+.ecmt-page-header-tools a:visited,
+.ecmt-page-header-settings a,
+.ecmt-page-header-settings a:visited {
+    color: inherit;
+}
+
+.ecmt-page-header-settings a, .ecmt-page-header-settings fieldset {
+    margin: 0 10px 0 0;
+}
+
+.ecmt-page-header-tools a, .ecmt-page-header-settings a {
+    position: relative;
+}
+
+.ecmt-page-header-tools>*, .ecmt-page-header-settings>* {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ecmt-page-header-menubtn {
+    display: none;
+}
+
+.ecmt-page-header-tools a, .ecmt-page-header-settings a {
+    -webkit-transition: color .2s ease-in;
+    -o-transition: color .2s ease-in;
+    transition: color .2s ease-in;
+}
+
+.ecmt-page-header-tools a:before, .ecmt-page-header-settings a:before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: -15px;
+    right: -10px;
+    bottom: -15px;
+}
+
+.ecmt-page-ba-navigation {
+    position: relative;
+    margin: 0 auto;
+    padding: 1px 0 14px 0;
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+}
+
+.ecmt-page-ba-navigation {
+    position: relative;
+    margin: 0 auto;
+    padding: 1px 0 14px 0;
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+}
+
+@media (max-width: 660px){
+    .ecmt-page-header {
+        padding: 0;
+        border-bottom: 1px solid #d9d9d9;
+
+        & .ecmt-page-header-logotype{
+            padding: 10px;
+            width: 58px;
+            margin-bottom: 0;
+        }
+    }
+
+    .ecmt-page-header-tools, .ecmt-page-header-settings {
+        padding: 15px 10px;
+    }
+
+   .ecmt-page-header-tools a, .ecmt-page-header-settings a {
+        font-size: 1em;
+        line-height: 1em;
+    }
+
+    .ecmt-page-header-menubtn {
+        display: inline-block;
+    }
+
+    .ecmt-mobile-hidden {
+        display: none!important;
+    }
+
+    .ecmt-mobile-only {
+        display: block!important;
+    }
+
+    .ecmt-page-header-tools .ecmt-icon, .ecmt-page-header-settings .ecmt-icon {
+        font-size: 1.5em;
+    }
+}

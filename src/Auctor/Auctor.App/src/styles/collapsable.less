@@ -1,0 +1,25 @@
+.collapseable {
+	overflow-y: hidden;
+
+	transition-property: all;
+	transition-duration: .9s;
+	transition-timing-function: cubic-bezier(0.3, 0.5, 0.3, 0.5);
+}
+
+.collapseable.closed {
+	max-height: 0;
+}
+
+.collapseable.open {
+	max-height: 500px;
+}
+
+@media (max-width: 660px){
+    .collapseable.closed-mobile {
+        max-height: 0;
+    }
+
+    .collapseable.open-mobile {
+        max-height: 500px;
+    }
+}

@@ -1,0 +1,13 @@
+select.btn-group.form-control.select(
+    name="selector",
+    [(ngModel)]="selectedKey",
+    (ngModelChange) = "select()")
+    option(
+        *ngIf="defaultValue",
+        value="" selected)
+            |  {{defaultValue}}
+    option(
+        *ngFor="let item of items",
+        [ngValue]="item.key")
+            | {{item.value}}
+

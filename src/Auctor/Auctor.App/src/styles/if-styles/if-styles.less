@@ -1,0 +1,72 @@
+a {
+    color: #39f;
+    text-decoration: none;
+}
+
+ul, ol {
+    margin-left: 0;
+    padding-left: 30px;
+    margin: 0 0 20px;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+    list-style-position: outside;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 100;
+    margin-bottom: 1em;
+    margin-top: .5em;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0 0 .5em;
+    line-height: 1.2em;
+    color: inherit;
+    font-family: "Open Sans",Arial,sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ecmt-logotype {
+    display: block;
+    margin: 0 auto;
+    width: 70px;
+}
+
+.ecmt-columned-list {
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+}
+
+.theme-bg-white {
+    background-color: #fff;
+}
+
+@media (max-width: 660px){
+    .ecmt-columned-list.mobile-cols-2 {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@import './if-page.less';
+@import './if-grid.less';
+@import './if-footer.less';
+@import './if-details.less';
+@import './if-accordions.less';
+@import './if-header.less';
+@import './if-navigation.less';
+@import './btx-improved-ui.less';
+@import './if-flex.less';
+@import './if-block.less';
+@import './if-text.less';
+@import './if-teaser.less';
+@import './if-form.less';
+@import './if-icon.less';
+@import './if-image-box.less';
