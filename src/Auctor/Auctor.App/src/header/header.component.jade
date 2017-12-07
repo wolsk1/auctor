@@ -59,253 +59,30 @@ header.header(id="header" role="banner" aria-label="Site header")
         .main-header-content
             div
                 .site-branding(id="block-sitebranding")
-                    a.site-branding__logo(href="/lv" title="Sākums" rel="home")
-                        img(src="/themes/custom/LLU/lv_logo.svg" alt="Sākums")
-            .social-media">
+                    a.site-branding__logo(href="http://www.llu.lv/lv" title="Sākums" rel="home")
+                        img(src="http://www.llu.lv/themes/custom/LLU/lv_logo.svg" alt="Sākums")
+            .social-media
                 div
                     div(id="block-socialbuttons-2")
                         div
-                            //- a(href="http://www.draugiem.lv/llu/" target="_blank" rel="nofollow")
-                            //-     img.align-center(alt="draugiem" data-entity-type="file" data-entity-uuid="d22618f4-c952-4050-9b04-4da8eb076bf4" src="/sites/default/files/inline-images/icon_draugiem.png" title="Draugiem")
-                            //- a(href="https://www.facebook.com/latvijaslauksaimniecibasuniversitate/?fref=ts" target="_blank" rel="nofollow")
-                            //-     img.align-center(alt="facebook" data-entity-type="file" data-entity-uuid="c7ef8631-febe-4306-b800-e2fb214c35cd" src="/sites/default/files/inline-images/icon_facebook.png" title="Facebook")
-                            //- a(href="https://www.instagram.com/lluniversitate/" target="_blank" rel="nofollow")
-                            //-     img.align-center(alt="Instagram" data-entity-type="file" data-entity-uuid="44b0629d-c918-417c-bd6b-bbbf6cc1f1c1" src="/sites/default/files/inline-images/new_instgram_1.png" title="Instagram")
-                            //- a(href="https://www.youtube.com/user/lluvideo" target="_blank" rel="nofollow")
-                            //- img.align-center(alt="Youtube" data-entity-type="file" data-entity-uuid="d71b9066-414b-4336-b500-004473bddd88"
-                            //-         src="/sites/default/files/inline-images/icon_youtube.png" title="YouTube")
-                            //- a(href="https://twitter.com/llu_lv" target="_blank" rel="nofollow")img.align-center(alt="twitter" data-entity-type="file" data-entity-uuid="bbaf0e2e-aa03-48e5-a500-cfbdb8fa6e35"
-                            //-         src="/sites/default/files/inline-images/icon_twitter.png" title="Twitter")
-                            //- a(href="/llu-portala-rss-plusmas">img.align-center(alt="RSS" data-entity-type="file" data-entity-uuid="abc519b5-da41-4ad4-ac3e-62fcd9dfaa8b"
-                            //-         src="/sites/default/files/inline-images/icon_rss.png" title="RSS")
-                            //- a(href="https://soundcloud.com/jelgava-student-podcast" target="_blank" rel="nofollow")img.align-center(alt="podcast" data-entity-type="file" data-entity-uuid="7c9dcb9d-f082-44ec-8856-95c1c129a4a3"
-                            //-         src="/sites/default/files/inline-images/new_podcast_0.png" title="Jelgava Student Podcast"
-                            //-        )
-            //- div
-            //-     <nav role="navigation" aria-labelledby="block-galvenaizvelne-2-menu" id="block-galvenaizvelne-2".block block-menu navigation menu--main">
-            //-         <h2.visually-hidden" id="block-galvenaizvelne-2-menu">Galvenā izvēlne
-            //-         .content">
-            //-             <ul.menu menu-level--0">
-            //-                 li
-            //-                     a(href="/lv/studijas" target="" data-drupal-link-system-path="node/309">Studijas
-            //-                     <ul.menu menu-level--1">
-            //-                         .col-3">
-            //-                             li
-            //-                                 a(href="/lv/fakultates" target="" data-drupal-link-system-path="node/1327">Fakultātes
-            //-                             li
-            //-                                 a(href="/lv/studiju-programmas".dataSortTables" target="" data-drupal-link-system-path="studiju-programmas">Studiju programmas
-            //-                             li
-            //-                                 a(href="/lv/studiju-iespejas" data-drupal-link-system-path="node/318">Studiju iespējas
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/pamatstudijas" data-drupal-link-system-path="node/1578">Pamatstudijas
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/magistra-studijas" target="" data-drupal-link-system-path="node/316">Maģistra studijas
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/doktora-studijas" target="" data-drupal-link-system-path="node/640">Doktora studijas
-            //-                             <li.sub ">
-            //-                                 a(href="http://www.mc.llu.lv/"" target="_blank" rel="nofollow")Mūžizglītība<span"><span.element-invisible">
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/atjaunosanas-studijam" data-drupal-link-system-path="node/319">Atjaunošanās studijām
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/pariesana-no-citas-augstskolas" data-drupal-link-system-path="node/320">Pāriešana no citas augstskolas
-            //-                             <li.sub last">
-            //-                                 a(href="/lv/e-studiju-programmas" target="" data-drupal-link-system-path="node/1175">E-studiju programmas
-            //-                         .col-3">
-            //-                             li
-            //-                                 a(href="/lv/valodu-centrs" target="" data-drupal-link-system-path="node/1574">Valodu centrs
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/darbinieki" target="" data-drupal-link-system-path="node/3415">Mācībspēki un darbinieki
-            //-                             <li.sub last">
-            //-                                 a(href="/lv/valodu-centra-aktivitates" target="" data-drupal-link-system-path="node/3416">Valodu centra darbība
-            //-                             li
-            //-                                 a(href="/lv/nodarbibu-grafiki" data-drupal-link-system-path="node/329">Nodarbību grafiki
-            //-                             li
-            //-                                 a(href="http://www.llu.lv/stipendijas">Stipendijas
-            //-                             li
-            //-                                 a(href="/lv/studiju-finansejums" data-drupal-link-system-path="node/607">Studiju finansējums
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/studiju-kredits" data-drupal-link-system-path="node/1171">Studiju kredīts
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/studejosa-kredits" data-drupal-link-system-path="node/1172">Studējošā kredīts
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/komerckrediti" data-drupal-link-system-path="node/1173">Komerckredīti
-            //-                             <li.sub last">
-            //-                                 a(href="/lv/citi-maksajumi" data-drupal-link-system-path="node/608">Citi maksājumi
-            //-                         .col-3">
-            //-                             li
-            //-                                 a(href="/lv/studiju-prakses" data-drupal-link-system-path="node/1568">Studiju prakses
-            //-                             li
-            //-                                 a(href="/lv/llu-informativa-sistema" data-drupal-link-system-path="node/1414">LLU Informatīvā sistēma
-            //-                             li
-            //-                                 a(href="/lv/studiju-un-reglamentejosie-dokumenti" target="" data-drupal-link-system-path="node/325">Studiju dokumenti un veidlapas
-            //-                             li
-            //-                                 a(href="/lv/starptautiska-mobilitate" data-drupal-link-system-path="node/324">Starptautiskā mobilitāte
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/erasmus-plus" target="" data-drupal-link-system-path="node/824">Erasmus+
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/llu-bova-tikla" data-drupal-link-system-path="node/826">LLU BOVA tīklā
-            //-                             <li.sub last">
-            //-                                 a(href="/lv/eez-norvegijas-finansu-instruments" target="" data-drupal-link-system-path="node/1174">EEZ/Norvēģijas finanšu instruments
-            //-                             li
-            //-                                 a(href="/lv/registracija-studijam" data-drupal-link-system-path="node/1840">Reģistrācija studijām
-            //-                             li
-            //-                                 a(href="/lv/studiju-noslegums" data-drupal-link-system-path="node/1333">Studiju noslēgums
-            //-                             li
-            //-                                 a(href="/lv/biblioteka" data-drupal-link-system-path="node/328">Bibliotēka
-            //-                         .col-3">
-            //-                             li
-            //-                                 a(href="/lv/darba_piedavajumi/view_work" target="" data-drupal-link-system-path="darba_piedavajumi/view_work">Darba un prakšu piedāvajumi
-            //-                             li
-            //-                                 a(href="/lv/studentu-dzive" target="" data-drupal-link-system-path="node/312">Ārpusstudiju dzīve
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/studentu-viesnicas" target="" data-drupal-link-system-path="node/349">Studentu viesnīcas
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/studejoso-pasparvalde" data-drupal-link-system-path="node/708">Studējošo pašpārvalde
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/studentu-organizacijas" target="" data-drupal-link-system-path="node/347">Studentu organizācijas
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/makslinieciskie-kolektivi" data-drupal-link-system-path="node/346">Mākslinieciskie kolektīvi
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/sports" data-drupal-link-system-path="node/345">Sports
-            //-                             <li.sub last">
-            //-                                 a(href="/lv/isic-karte" data-drupal-link-system-path="node/350">ISIC karte
-            //-                             li
-            //-                                 a(href="http://www.llu.lv/pieteikties_jaunumiem/students" target="">Piesakies jaunumu vēstulei!
-            //-                 li
-            //-                     a(href="/lv/zinatne-un-inovacijas" target="" data-drupal-link-system-path="node/310">Zinātne un inovācijas
-            //-                     <ul.menu menu-level--1">
-            //-                         .col-3">
-            //-                             li
-            //-                                 a(href="http://www.llu.lv/lv/petnieciba" target="">Pētniecība
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/petijumu-virzieni" target="" data-drupal-link-system-path="node/1267">Pētījumu virzieni
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/patenti" title="LLU zinātnieku apstiprinātie patenti" data-drupal-link-system-path="node/616">Patenti
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/llu-zinatniskais-zurnals-rural-sustainability-research" target="" data-drupal-link-system-path="node/617">Zinātniskais žurnāls "Rural Sustainability Research"
-            //-                             <li.sub last">
-            //-                                 a(href="/lv/zinatnes-padomes-sedes" target="" title="Lēmumi par doktora studijām un LLU zinātniskajām aktivitātēm" data-drupal-link-system-path="node/691">Zinātnes padome
-            //-                             li
-            //-                                 a(href="/lv/konferences" data-drupal-link-system-path="node/667">Konferences
-            //-                             li
-            //-                                 a(href="/lv/projekti" target="" data-drupal-link-system-path="node/801">Projekti
-            //-                         .col-3">
-            //-                             li
-            //-                                 a(href="/lv/bioekonomika" target="" data-drupal-link-system-path="node/2643">Bioekonomika
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/kas-ir-bioekonomika" data-drupal-link-system-path="node/2644">Kas ir bioekonomika?
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/ko-bioekonomikas-attistiba-dod-latvijai" data-drupal-link-system-path="node/2645">Ko bioekonomikas attīstība dod Latvijai?
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/bioekonomikas-aktualitate-latvija-un-pasaule" data-drupal-link-system-path="node/2646">Bioekonomikas aktualitāte Latvijā un pasaulē
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/llu-un-bioekonomikas-petniecibas-strategiska-apvieniba" data-drupal-link-system-path="node/2648">LLU un Bioekonomikas pētniecības stratēģiskā apvienība
-            //-                             <li.sub last">
-            //-                                 a(href="/lv/seminari-konferences-un-citi-pasakumi" data-drupal-link-system-path="node/2649">Semināri, konferences un citi pasākumi
-            //-                         .col-3">
-            //-                             li
-            //-                                 a(href="/lv/zinatnieku-pakalpojumi" target="" title="Nozaru ekspertu konsultācijas, atbalsts uzņēmējiem un plašsaziņas līdzekļiem"
-            //-                                     data-drupal-link-system-path="node/690">Zinātnieku pakalpojumi uzņēmējiem
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/petnieku-piedavatas-temas-uznemejiem" target="" data-drupal-link-system-path="node/2228">Pētnieku piedāvātas tēmas uzņēmējiem
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/llu-veiksmes-stasti" data-drupal-link-system-path="node/2229">Veiksmes stāsti
-
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/tehnologiju-un-zinasanu-parneses-nodala" target="" data-drupal-link-system-path="node/2230">Tehnoloģiju un zināšanu pārneses nodaļa
-            //-                             <li.sub last">
-            //-                                 a(href="/lv/zinatniska-inventara-datubaze" target="" data-drupal-link-system-path="zinatniska-inventara-datubaze">Zinātniskā inventāra datu bāze
-            //-                         .col-3">
-            //-                             li
-            //-                                 a(href="/lv/universitates-zinatniskie-instituti" title="Pakļautības iestādes, nozaru pētījumi, studentu specializēšanās un zināšanu ieviešana praksē"
-            //-                                     data-drupal-link-system-path="node/689">Zinātniskie institūti
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/agroresursu-un-ekonomikas-instituts" data-drupal-link-system-path="node/1328">Agroresursu un ekonomikas institūts
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/darzkopibas-instituts" data-drupal-link-system-path="node/1329">Dārzkopības institūts
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/latvijas-augu-aizsardzibas-petniecibas-centrs" data-drupal-link-system-path="node/1331">Latvijas Augu aizsardzības pētniecības centrs
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/zemkopibas-zinatniskais-instituts" data-drupal-link-system-path="node/1330">Zemkopības zinātniskais institūts
-            //-                             <li.sub last">
-            //-                                 a(href="/lv/meza-petisanas-stacija" data-drupal-link-system-path="node/1720">Meža pētīšanas stacija
-            //-                             li
-            //-                                 a(href="/lv/llu-zinatniskas-laboratorijas" data-drupal-link-system-path="node/674">Zinātniskās laboratorijas
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/augu-skirnu-saimniecisko-ipasibu-novertesanas-laboratorija" title="Šķirņu novērtēšana, lai noskaidrotu tās piemērotību konvencionālajā un bioloģiskajā lauksaimniecībā"
-            //-                                     data-drupal-link-system-path="node/675">Augu šķirņu saimniecisko īpašību novērtēšanas laboratorija
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/mezu-un-udens-resursu-zinatniska-laboratorija" target="" title="Veic mežu un ūdens resursu izpēti" data-drupal-link-system-path="node/677">Meža un ūdens resursu zinātniskā laboratorija
-
-            //-                             <li.sub last">
-            //-                                 a(href="/lv/biotehnologiju-zinatniska-laboratorija" data-drupal-link-system-path="node/2639">Biotehnoloģiju zinātniskā laboratorija                            li
-            //-                     a(href="/lv/par-mums" target="" data-drupal-link-system-path="node/311">Par mums
-            //-                     <ul.menu menu-level--1">
-            //-                         .col-3">
-            //-                             li
-            //-                                 a(href="/lv/fakultates-un-instituti" target="" data-drupal-link-system-path="node/332">Fakultātes un zinātniskie institūti
-            //-                             li
-            //-                                 a(href="/lv/parvalde" data-drupal-link-system-path="node/333">Pārvalde
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/vadiba" data-drupal-link-system-path="node/334">Vadība
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/struktura" data-drupal-link-system-path="struktura">Struktūra un struktūrvienības
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/senats" data-drupal-link-system-path="node/335">Senāts
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/konvents" data-drupal-link-system-path="node/522">Konvents
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/padomnieku-konvents" data-drupal-link-system-path="node/336">Padomnieku konvents
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/strategija" data-drupal-link-system-path="node/337">Stratēģija
-            //-                             <li.sub last">
-            //-                                 a(href="/lv/amatpersonu-atalgojumi" data-drupal-link-system-path="node/711">Amatpersonu atalgojumi
-            //-                         .col-3">
-            //-                             li
-            //-                                 a(href="/lv/vesture-un-simbolika" data-drupal-link-system-path="node/338">Vēsture un simbolika
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/vesture" data-drupal-link-system-path="node/339">Vēsture
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/tradicijas" data-drupal-link-system-path="node/348">Tradīcijas
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/simbolika" data-drupal-link-system-path="node/340">Simbolika
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/suveniri" data-drupal-link-system-path="suveniri">Suvenīri
-            //-                             <li.sub last">
-            //-                                 a(href="/lv/llu-zimola-vadlinijas" data-drupal-link-system-path="node/1373">LLU zīmola vadlīnijas
-            //-                         .col-3">
-            //-                             li
-            //-                                 a(href="/lv/dokumenti" data-drupal-link-system-path="node/341">Dokumenti
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/llu-pamatdokumenti" title="Universitātes satversme, darbības stratēģija, publiskie pārskati u.c." data-drupal-link-system-path="node/533">LLU pamatdokumenti
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/nolikumi" title="Vēlēšanu nolikumi, struktūrvienību nolikumi, fakultāšu nolikumi u.c." data-drupal-link-system-path="node/534">Nolikumi
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/noteikumi" title="Ētikas kodekss, iekšējās kārtības noteikumi, Ministru kabineta noteikumi" data-drupal-link-system-path="node/535">Noteikumi
-            //-                             <li.sub ">
-            //-                                 a(href="/lv/veidlapas" data-drupal-link-system-path="node/1371">Veidlapas
-            //-                             <li.sub last">
-            //-                                 a(href="/lv/ar-studijam-saistitie-dokumenti" data-drupal-link-system-path="node/1591">Ar studijām saistītie dokumenti
-            //-                             li
-            //-                                 a(href="/lv/arodbiedriba" data-drupal-link-system-path="node/342">Arodbiedrība
-            //-                             li
-            //-                                 a(href="/lv/iepirkumi/list" target="" data-drupal-link-system-path="iepirkumi/list">Iepirkumi
-            //-                             li
-            //-                                 a(href="/lv/telpu-noma" target="" data-drupal-link-system-path="node/1907">Telpu noma
-            //-                             li
-            //-                                 a(href="/lv/starptautiska-sadarbiba" data-drupal-link-system-path="node/823">Starptautiskā sadarbība
-            //-                         .col-3">
-            //-                             li
-            //-                                 a(href="/lv/attistibas-fonds" data-drupal-link-system-path="node/1954">Attīstības fonds
-            //-                             li
-            //-                                 a(href="/lv/metodiskais-darbs-un-macibspeku-kvalifikacija" data-drupal-link-system-path="node/1562">Metodiskais darbs un mācībspēku kvalifikācija
-            //-                             li
-            //-                                 a(href="/lv/makslinieciskie-kolektivi" target="" data-drupal-link-system-path="node/346">Mākslinieciskie kolektīvi
-            //-                             li
-            //-                                 a(href="/lv/macibu-un-petijumu-saimnieciba-vecauce" target="" data-drupal-link-system-path="node/1266">Mācību un pētījumu saimniecība "Vecauce"
-            //-                             li
-            //-                                 a(href="/lv/engures-atputas-baze" data-drupal-link-system-path="node/1564">Engures atpūtas bāze
-            //-                             li
-            //-                                 a(href="/lv/kontakti" title="Kontaktinformācija" data-drupal-link-system-path="node/388">Kontakti
-            //-                 li
-            //-                     a(href="http://www.llu.lv/lv/nac-studet-llu".super-state" target="">Nāc studēt
+                            a(href="http://www.draugiem.lv/llu/" target="_blank" rel="nofollow")
+                                img.align-center(alt="draugiem" data-entity-type="file" data-entity-uuid="d22618f4-c952-4050-9b04-4da8eb076bf4" 
+                                    src="http://www.llu.lv/sites/default/files/inline-images/icon_draugiem.png" title="Draugiem")
+                            a(href="https://www.facebook.com/latvijaslauksaimniecibasuniversitate/?fref=ts" target="_blank" rel="nofollow")
+                                img.align-center(alt="facebook" data-entity-type="file" data-entity-uuid="c7ef8631-febe-4306-b800-e2fb214c35cd" 
+                                    src="http://www.llu.lv/sites/default/files/inline-images/icon_facebook.png" title="Facebook")
+                            a(href="https://www.instagram.com/lluniversitate/" target="_blank" rel="nofollow")
+                                img.align-center(alt="Instagram" data-entity-type="file" data-entity-uuid="44b0629d-c918-417c-bd6b-bbbf6cc1f1c1" 
+                                    src="http://www.llu.lv/sites/default/files/inline-images/new_instgram_1.png" title="Instagram")
+                            a(href="https://www.youtube.com/user/lluvideo" target="_blank" rel="nofollow")
+                                img.align-center(alt="Youtube" data-entity-type="file" data-entity-uuid="d71b9066-414b-4336-b500-004473bddd88"
+                                    src="http://www.llu.lv/sites/default/files/inline-images/icon_youtube.png" title="YouTube")
+                            a(href="https://twitter.com/llu_lv" target="_blank" rel="nofollow")
+                                img.align-center(alt="twitter" data-entity-type="file" data-entity-uuid="bbaf0e2e-aa03-48e5-a500-cfbdb8fa6e35"
+                                    src="http://www.llu.lv/sites/default/files/inline-images/icon_twitter.png" title="Twitter")
+                            a(href="http://www.llu.lv/llu-portala-rss-plusmas")
+                                img.align-center(alt="RSS" data-entity-type="file" data-entity-uuid="abc519b5-da41-4ad4-ac3e-62fcd9dfaa8b" 
+                                    src="http://www.llu.lv/sites/default/files/inline-images/icon_rss.png" title="RSS")
+                            a(href="https://soundcloud.com/jelgava-student-podcast" target="_blank" rel="nofollow")
+                                img.align-center(alt="podcast" data-entity-type="file" data-entity-uuid="7c9dcb9d-f082-44ec-8856-95c1c129a4a3"
+                                    src="http://www.llu.lv/sites/default/files/inline-images/new_podcast_0.png" title="Jelgava Student Podcast")
