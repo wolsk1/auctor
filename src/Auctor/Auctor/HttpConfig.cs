@@ -7,7 +7,7 @@
     using System.Net.Http.Headers;
     using System.Web.Http;
 
-    public static class HttpConfig
+    internal static class HttpConfig
     {
         public static HttpConfiguration SetHttpConfiguration(ILifetimeScope container)
         {

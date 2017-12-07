@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public class ApiResult
+    internal class ApiResult
     {
         public ApiResult()
         {

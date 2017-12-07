@@ -3,7 +3,7 @@
     using Autofac;
     using System.Reflection;
 
-    public static class AutofacInitializer
+    internal static class AutofacInitializer
     {
         private static bool initializedAlready;
         private static readonly object lockTarget = new object();

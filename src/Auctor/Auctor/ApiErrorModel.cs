@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public class ApiErrorModel
+    internal class ApiErrorModel
     {
         public IEnumerable<string> FieldNames { get; set; }
 

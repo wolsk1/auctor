@@ -4,7 +4,7 @@
     using Autofac.Integration.WebApi;
     using System.Reflection;
 
-    public class AutofacConfig : Autofac.Module
+    internal class AutofacConfig : Autofac.Module
     {
         protected override void Load(ContainerBuilder builder)
         {

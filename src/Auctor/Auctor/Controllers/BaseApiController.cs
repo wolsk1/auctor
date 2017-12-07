@@ -2,7 +2,7 @@
 {
     using System.Web.Http;
 
-    public abstract class BaseApiController : ApiController
+    internal abstract class BaseApiController : ApiController
     {
         
     }

@@ -8,7 +8,7 @@
     using System.Threading.Tasks;
     using System.Web.Http;
 
-    public class ErrorActionResult : IHttpActionResult
+    internal class ErrorActionResult : IHttpActionResult
     {
         private readonly HttpRequestMessage request;
 

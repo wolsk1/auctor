@@ -7,7 +7,7 @@
     using System.Web.Http;
 
 
-    public abstract class BaseController : ApiController
+    internal abstract class BaseController : ApiController
     {
         protected IHttpActionResult ApiResponse(IEnumerable<ValidationFailure> errors)
         {
