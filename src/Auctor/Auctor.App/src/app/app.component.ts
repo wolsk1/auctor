@@ -16,6 +16,6 @@ export class AppComponent {
     private pageReady: boolean;
 
     public ngOnInit(): void {      
-        this.titleService.setTitle('auctor');
+        this.titleService.setTitle('Auctor');
     }
 }
