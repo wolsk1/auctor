@@ -2,14 +2,12 @@ var path = require('path');
 var webpackConfig = require('./webpack.config');
 
 module.exports = webpackConfig({
-    devtool: '#eval-source-map',
-    debug: true,
-    clean: true,
+    devtool: 'source-map',
+    clean: false,
     extractStyles: false,
-    optimize: false,
-    hotReload: false,
-    define: {
-        SERVER_URL__: "'https://auctor/'",
-        DEBUG__: 'true'
+    optimize: true,
+    minify: false,
+    output: {
+        filename: '[name].js'
     }
 });

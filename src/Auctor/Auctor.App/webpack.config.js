@@ -14,13 +14,14 @@ module.exports = function (opts) {
         debug: false,
 
         entry: {
-            app: ['./src/main.ts']
+            'vendor': './src/vendor.ts',
+            'app': ['./src/main.ts']
         },
 
         output: {
             path: wwwroot,
-            filename: './[name].[hash].js',
-            publicPath: ''
+            filename: opts.output.filename,
+            sourceMapFilename: '[file].map'
         },
 
         resolve: {
@@ -33,6 +34,7 @@ module.exports = function (opts) {
 
         module: {
             loaders: [
+                { test: /lodash/, loader: 'exports?_' },
                 { test: /\.ts$/, loader: 'ts' },
                 { test: /\.json$/, loader: "json" },
                 { test: /\.(woff|woff2|ttf|eot)(\?.*$|$)/, loader: 'file?name=fonts/[name].[hash].[ext]' },
@@ -43,7 +45,8 @@ module.exports = function (opts) {
                     loader: "html!pug-html?pretty=true",
                     exclude: /index\.jade$/
                 }
-            ]
+            ],
+            noParse: [/.+zone\.js\/dist\/.+/, /.+angular2\/bundles\/.+/, /angular2-polyfills\.js/]
         },
 
         postcss: function () {
@@ -51,17 +54,23 @@ module.exports = function (opts) {
         },
 
         plugins: [
-            new webpack.DefinePlugin(opts.define),
+            new CopyWebpackPlugin([{
+                from: 'common/gfx/favicon.ico',
+                to: 'favicon.ico'
+            }]),
+            new CopyWebpackPlugin([{
+                from: 'error.html',
+                to: 'error.html'
+            }]),
             new HtmlWebpackPlugin({
                 template: 'html!pug-html!index.jade',
                 filename: 'index.html',
                 //favicon: './src/favicon.ico',
-                chunks: ['app']
+                chunks: ['vendor', 'app']
             }),
-            // new CopyWebpackPlugin([{
-            //     from: 'error.html',
-            //     to: 'error.html'
-            // }]),
+            new webpack.optimize.CommonsChunkPlugin({
+                name: ['vendor']
+            }),
             new CleanWebpackPlugin(['./wwwroot'])
         ],
 
