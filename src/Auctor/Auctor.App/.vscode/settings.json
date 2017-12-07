@@ -1,5 +1,18 @@
 {
-    "typescript.tsdk": "node_modules\\typescript\\lib",
-    "editor.fontSize": 14,
-    "editor.lineHeight": 0
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 3000,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/.vscode": true,
+        ".typingsrc": true,
+        ".editorconfig": true,
+        ".npmrc": true
+      },
+    "editor.fontSize": 13,
+    "typescript.tsdk": "./node_modules/typescript/lib"
 }

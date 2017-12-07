@@ -6,7 +6,7 @@ import './extensions';
 //import './styles/if-styles/if-styles.less';
 //import './styles/app.less';
 import './styles/llu/llu.less';
-import './favicon.ico';
+//import './favicon.ico';
 
 enableProdMode();
 platformBrowserDynamic().bootstrapModule(AppModule);

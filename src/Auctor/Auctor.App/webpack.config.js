@@ -55,8 +55,8 @@ module.exports = function (opts) {
 
         plugins: [
             new CopyWebpackPlugin([{
-                from: 'common/gfx/favicon.ico',
-                to: 'favicon.ico'
+                from: 'gfx/favicon.gif',
+                to: 'favicon.gif'
             }]),
             new CopyWebpackPlugin([{
                 from: 'error.html',
@@ -65,7 +65,7 @@ module.exports = function (opts) {
             new HtmlWebpackPlugin({
                 template: 'html!pug-html!index.jade',
                 filename: 'index.html',
-                //favicon: './src/favicon.ico',
+                favicon: './src/favicon.gif',
                 chunks: ['vendor', 'app']
             }),
             new webpack.optimize.CommonsChunkPlugin({
