@@ -5,7 +5,7 @@ header.header(id="header" role="banner" aria-label="Site header")
                 div
                     .search-block-form(data-drupal-selector="search-block-form" id="block-meklesanasforma" role="search")
                         .search--btn
-                        form(action="/lv/search/node" method="get" id="search-block-form" accept-charset="UTF-8" style="display: none;")
+                        form(action="http://www.llu.lv/lv/search/node" method="get" id="search-block-form" accept-charset="UTF-8" style="display: none;")
                             .js-form-item.form-item.js-form-type-search.form-item-keys.js-form-item-keys.form-no-label
                                 label.visually-hidden(for="edit-keys") Meklēt
                                 input.form-search(title="Ievadiet terminus, kurus meklēt." data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128")
@@ -15,10 +15,10 @@ header.header(id="header" role="banner" aria-label="Site header")
                     .language-switcher-language-url(id="block-valoduparsledzejs" role="navigation")
                         ul.language-selector
                             li.en(hreflang="en" data-drupal-link-system-path="<front>")
-                                a.language-link(href="/en" hreflang="en" data-drupal-link-system-path="<front>")
+                                a.language-link(href="http://www.llu.lv/en" hreflang="en" data-drupal-link-system-path="<front>")
                                     |EN
                             li.lv.is-active(hreflang="lv" data-drupal-link-system-path="<front>")
-                                a.language-link.is-active(href="/lv" hreflang="lv" data-drupal-link-system-path="<front>")
+                                a.language-link.is-active(href="http://www.llu.lv/lv" hreflang="lv" data-drupal-link-system-path="<front>")
                                     |LV
                     nav.block.block-menu.navigation.menu--secondary-menu(role="navigation" aria-labelledby="block-secondarymenu-menu" id="block-secondarymenu")
                         h2.visually-hidden(id="block-secondarymenu-menu") Secondary menu
@@ -52,7 +52,7 @@ header.header(id="header" role="banner" aria-label="Site header")
                                         |Iepirkumi
                                 li
                                     a(href="https://webmail.llu.lv/login.php?new_lang=lv_LV" target="_blank" rel="nofollow")
-                                        |Jelgavas pils
+                                        |E-pasts
                                         span
                                         span.element-invisible
                             .clearfix
