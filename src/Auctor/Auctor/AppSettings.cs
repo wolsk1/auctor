@@ -14,8 +14,10 @@
 
         internal static readonly bool ShowErrorPage = Utils.GetAppSettingsValue<bool>("debug:show-errorPage");
 
-        internal static readonly bool ApiPrefix = Utils.GetAppSettingsValue<bool>("api:url-prefix");
+        internal static readonly string ApiPrefix = Utils.GetAppSettingsValue<string>("api:url-prefix");
 
-        internal static readonly bool BaseHref = Utils.GetAppSettingsValue<bool>("api:url-base");
+        internal static readonly string BaseHref = Utils.GetAppSettingsValue<string>("api:url-base");
+
+        internal static readonly string AppName = Utils.GetAppSettingsValue<string>("app:name");
     }
 }

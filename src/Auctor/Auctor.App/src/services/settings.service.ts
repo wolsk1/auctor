@@ -22,6 +22,7 @@ export class SettingsService {
     public country: string;
     public countryLinks: CountrySettings;
     public connectionProtocol: string;
+    public appName: string;
 
     public update: Observable<Settings>;
 

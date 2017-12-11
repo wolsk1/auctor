@@ -3,10 +3,10 @@ import { Http, Response } from '@angular/http';
 import { ServiceUtils } from './service.utils';
 import { SettingsService } from './settings.service';
 
-export class BaseService {
+export class HttpService {
     constructor(
         protected http: Http,
-        protected settingsService: SettingsService){}
+        protected settingsService: SettingsService) { }
 
     private baseApiUrl: string = `${this.settingsService.apiPath}/configuration`;
 

@@ -16,8 +16,10 @@
 
         private static void RegisterControllers(ContainerBuilder builder)
         {
-            //builder.RegisterType<ClassifiersController>()
-            //    .AsSelf();
+            builder.RegisterType<TestController>()
+                .AsSelf();
+            builder.RegisterType<UserController>()
+                .AsSelf();
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
         }

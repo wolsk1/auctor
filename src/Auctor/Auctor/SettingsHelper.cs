@@ -27,7 +27,8 @@
                 Version = version,
                 BasePath = AppSettings.BaseHref,
                 ApiPath = $"{request.Scheme}://{request.Host.Value}/{AppSettings.ApiPrefix}",
-                ConnectionProtocol = request.Scheme
+                ConnectionProtocol = request.Scheme,
+                AppName = AppSettings.AppName
             }, serializerSettings);
         }
     }

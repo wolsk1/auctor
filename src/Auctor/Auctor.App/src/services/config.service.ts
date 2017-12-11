@@ -7,20 +7,20 @@ import {
 } from './../models';
 import { ServiceUtils } from './';
 import { SettingsService } from './settings.service';
-import { BaseService } from './base.service';
+import { HttpService } from './http.service';
 
 @Injectable()
-export class ConfigService extends BaseService {
+export class ConfigService extends HttpService {
     constructor(
         http: Http,
         settingsService: SettingsService) {
-            super(http, settingsService);
-    }   
-
-    public getCountryProducts(): Observable<IdCollection[]> {
-        return this.cacheWrapper<IdCollection[]>(
-            'country-products',
-            'countryProductsCache',
-            'countryProductsObservable');
+        super(http, settingsService);
     }
+
+    // public getCountryProducts(): Observable<IdCollection[]> {
+    //     return this.cacheWrapper<IdCollection[]>(
+    //         'country-products',
+    //         'countryProductsCache',
+    //         'countryProductsObservable');
+    // }
 }

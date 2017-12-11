@@ -4,9 +4,9 @@
 
     [RoutePrefix("test")]
     
-    internal class ClassifiersController : BaseApiController
+    public class TestController : BaseApiController
     {       
-        public ClassifiersController()
+        public TestController()
         {            
         }
         

@@ -80,7 +80,7 @@ namespace VolskNet.Auctor
 
                     return SendHtmlFile(
                         context,
-                        path.Substring(0, path.LastIndexOf("/steering", StringComparison.OrdinalIgnoreCase)),
+                        path.Substring(0, path.LastIndexOf("/auctor", StringComparison.OrdinalIgnoreCase)),
                         Path.Combine(wwwroot, DEFAULT_DOCUMENT));
                 });
             });
