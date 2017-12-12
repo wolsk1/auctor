@@ -104,5 +104,17 @@
             }
         }
 
+        public static string GetConnectionString(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new ArgumentNullException(nameof(name));
+            }
+
+            var value = ConfigurationManager.ConnectionStrings[name];
+
+            return value.ConnectionString;
+        }
+
     }
 }
