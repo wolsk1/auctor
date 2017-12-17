@@ -1,0 +1,13 @@
+.panel.panel.panel-default
+  .panel-heading
+    .row
+      .col-lg-3 event-course
+      .col-lg-3 event-name
+      .col-lg-3 value-in-minutes
+      .col-lg-3 valid-period
+  .panel-body
+     .row(*ngFor="let event of events")
+      .col-lg-3 {{event?.course}}
+      .col-lg-3 {{event?.name}}
+      .col-lg-3 {{event?.value}}
+      .col-lg-3 {{event?.validFrom}} - {{event?.validTill}}

@@ -1,0 +1,33 @@
+.panel.panel.panel-default
+  .panel-heading add-event
+  .panel-body
+    form
+      .row
+        .col-lg-4
+          v-select(                    
+            [items]='courses',
+            [default-value]="courseDefaultValue",
+            (selected)="setCourse($event)")
+        .col-lg-4
+          input(type="text", placeholder="event-name")
+        .col-lg-4
+          input(type="number", placeholder="value-in-minutes")
+      hr
+      .row
+        .col-lg-1
+          label valid-from
+        .col-lg-5
+          ngx-datepicker([(ngModel)]="validFrom")
+        .col-lg-1
+          label valid-till
+        .col-lg-5
+          ngx-datepicker([(ngModel)]="validTill")
+        //- .col-lg-6
+        //-   label(for="from-date") valid-from
+        //-   input(type="datetime-local", id="from-date", placeholder="valid-from", required)          
+        //- .col-lg-6
+        //-   label(for="till-date") valid-till
+        //-   input(type="date", id="till-date", placeholder="valid-till", required)
+
+
+

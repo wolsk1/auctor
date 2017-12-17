@@ -4,7 +4,8 @@ import { COMPILER_PROVIDERS } from '@angular/compiler';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { DefaultModule } from './../default';
+import { DefaultModule } from '../default';
+import { ConEventModule } from '../pages';
 import { ComponentModule } from '../components';
 import { ErrorPageModule } from '../error-page';
 import { POWERSTEERING_PROVIDERS } from '../providers';
@@ -21,6 +22,7 @@ import { HeaderModule } from '../header/header.module';
         HeaderModule,
         ComponentModule,        
         DefaultModule,
+        ConEventModule,
         ErrorPageModule,
         BrowserModule,
         FormsModule,
