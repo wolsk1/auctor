@@ -18,7 +18,7 @@ import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';
 
 //import 'font-awesome/css/font-awesome.css';
-//import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 // Angular 2
 import '@angular/platform-browser';
@@ -30,3 +30,4 @@ import '@angular/router';
 //import '@angular/upgrade';
 import '@angular/compiler';
 //import 'ng2-translate'; //TODO add this
+import 'ngx-bootstrap';
