@@ -10,7 +10,7 @@ import {
 import { KeyValuePair } from './../../models';
 
 @Component({
-    selector: 'steering-select',
+    selector: 'v-select',
     template: require('./select.component.jade')
 })
 export class SelectComponent {
