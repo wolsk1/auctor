@@ -12,7 +12,10 @@ import { appRouting } from './app.routing';
 import { FooterModule } from '../footer/footer.module';
 import { HeaderModule } from '../header/header.module';
 import { DefaultModule } from './../default/default.module';
-import { ConEventModule } from '../pages';
+import { 
+    ConEventModule,
+    ConsultationsModule
+} from '../pages';
 import { ConfigPanelModule } from './../config-panel/config-panel.module';
 
 @NgModule({
@@ -28,6 +31,7 @@ import { ConfigPanelModule } from './../config-panel/config-panel.module';
         DefaultModule
         ,ConEventModule
         ,ConfigPanelModule
+        ,ConsultationsModule
     ],
     declarations: [
         AppComponent

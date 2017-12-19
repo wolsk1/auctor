@@ -1,0 +1,13 @@
+.panel.panel.panel-default
+  .panel-heading
+    .row      
+      .col-lg-3 date
+      .col-lg-2 start-time
+      .col-lg-2 end-time
+      .col-lg-1 room      
+  .panel-body
+     .row(*ngFor="let item of items")
+      .col-lg-3 {{item?.date}}
+      .col-lg-3 {{item?.startTime}}
+      .col-lg-3 {{item?.endTime}}
+      .col-lg-3 {{item?.room}}
