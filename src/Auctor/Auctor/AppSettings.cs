@@ -19,5 +19,7 @@
         internal static readonly string BaseHref = Utils.GetAppSettingsValue<string>("api:url-base");
 
         internal static readonly string AppName = Utils.GetAppSettingsValue<string>("app:name");
+
+        internal static readonly string DbSchema = Utils.GetAppSettingsValue<string>("db:schema");
     }
 }

@@ -1,13 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using VolskNet.Auctor.Domain;
-
-namespace VolskNet.Auctor
+﻿namespace VolskNet.Auctor
 {
-    public interface IDataManager
-    {
-        IEnumerable<Faculty> GetFaculties();
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
 
-        Task<IEnumerable<Faculty>> GetFacultiesAsync();
+    public interface IDataManager
+    {       
+        Task<IEnumerable<TRecord>> GetRecordsAsync<TRecord>(AuctorTable table);
     }
 }

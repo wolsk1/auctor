@@ -1,5 +1,6 @@
 ﻿namespace VolskNet.Auctor
 {
+    using VolskNet.Auctor.Domain;
     using System.Threading.Tasks;
     using System.Web.Http;
 
@@ -17,7 +18,7 @@
         [Route("faculties")]
         public async Task<IHttpActionResult> GetFaculties()
         {
-            var documents = await dataManager.GetFacultiesAsync();
+            var documents = await dataManager.GetRecordsAsync<Faculty>(AuctorTable.Faculty);
 
             return Ok(documents);
         }
