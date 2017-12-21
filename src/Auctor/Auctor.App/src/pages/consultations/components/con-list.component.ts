@@ -4,15 +4,18 @@ import {
     OnInit
 } from '@angular/core';
 
-import { Con } from '../models';
+import { ConItem } from '../models';
 
 @Component({
     selector: 'con-list',
     template: require('./con-list.component.jade')
 })
 export class ConListComponent implements OnInit {   
-
-    private events: Con[] = [];
+    cons: ConItem[];
+    
+    constructor(){
+        this.cons = [];
+    }
 
     public ngOnInit(): void {
         

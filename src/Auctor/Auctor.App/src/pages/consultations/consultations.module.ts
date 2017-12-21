@@ -6,7 +6,7 @@ import { ComponentModule } from '../../components';
 
 import { ConsultationsComponent } from './consultations.component';
 import { ConListComponent } from './components/con-list.component';
-import { ConComponent } from './components/con.component';
+import { ConItemComponent } from './components/con-item.component';
 import { routing } from './consultations.routing';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { routing } from './consultations.routing';
     declarations: [
         ConsultationsComponent
         ,ConListComponent
-        ,ConComponent
+        ,ConItemComponent
     ],
     exports: []
 })

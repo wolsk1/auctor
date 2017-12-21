@@ -1,2 +1,2 @@
-export * from './con';
+export * from './con-item';
 export * from './room';
