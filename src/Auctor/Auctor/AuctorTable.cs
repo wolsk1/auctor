@@ -2,6 +2,10 @@
 {
     public enum AuctorTable
     {
-        Faculty
+        Faculty,
+        Room,
+        Course,
+        Lecturer,
+        Consultation
     }
 }

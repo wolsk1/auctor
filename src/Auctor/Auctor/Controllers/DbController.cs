@@ -22,5 +22,41 @@
 
             return Ok(documents);
         }
+
+        [HttpGet]
+        [Route("rooms")]
+        public async Task<IHttpActionResult> GetRooms()
+        {
+            var documents = await dataManager.GetRecordsAsync<Room>(AuctorTable.Room);
+
+            return Ok(documents);
+        }
+
+        [HttpGet]
+        [Route("courses")]
+        public async Task<IHttpActionResult> GetCourses()
+        {
+            var documents = await dataManager.GetRecordsAsync<Course>(AuctorTable.Course);
+
+            return Ok(documents);
+        }
+
+        [HttpGet]
+        [Route("lecturers")]
+        public async Task<IHttpActionResult> GetLecturers()
+        {
+            var documents = await dataManager.GetRecordsAsync<Lecturer>(AuctorTable.Lecturer);
+
+            return Ok(documents);
+        }
+
+        [HttpGet]
+        [Route("consultations")]
+        public async Task<IHttpActionResult> GetConsultations()
+        {
+            var documents = await dataManager.GetRecordsAsync<Consultation>(AuctorTable.Consultation);
+
+            return Ok(documents);
+        }
     }
 }

@@ -69,7 +69,15 @@
     <Compile Include="ConnectionStrings.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Domain\ConsultationEvent.cs" />
+    <Compile Include="Domain\Participant.cs" />
+    <Compile Include="Domain\LecturerCourse.cs" />
+    <Compile Include="Domain\Course.cs" />
     <Compile Include="Controllers\DbController.cs" />
+    <Compile Include="Domain\Lecturer.cs" />
+    <Compile Include="Domain\Consultation.cs" />
+    <Compile Include="Domain\ConsultationEvents.cs" />
+    <Compile Include="Domain\Room.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="DbHelper.cs" />
