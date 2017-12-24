@@ -1,42 +1,47 @@
-﻿using Npgsql;
-using Npgsql.Schema;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
-
-namespace VolskNet.Auctor
+﻿namespace VolskNet.Auctor
 {
+    using Npgsql;
+    using Npgsql.Schema;
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
+    using System.Reflection;
+    using System.Threading.Tasks;
+
     public class DataManager : IDataManager
     {      
         public async Task<IEnumerable<TRecord>> GetRecordsAsync<TRecord>(AuctorTable table)
         {
             using (var cmd = DbHelper.CreateCommand())
             {
-                cmd.CommandText = $"SELECT * FROM {AppSettings.DbSchema}.{table.ToString().ToLower()}";
-                var records = new List<TRecord>();
+                cmd.CommandText = $"SELECT * FROM {AppSettings.DbSchema}.{table.ToString().ToLower()}";               
 
+                return await ExecuteAndFormatQuery<TRecord>(cmd);
+            }
+        }
 
-                using (var reader = cmd.ExecuteReader())
+        public async Task<IEnumerable<TRecord>> ExecuteAndFormatQuery<TRecord>(NpgsqlCommand cmd)
+        {
+            var records = new List<TRecord>();
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                var schema = reader.GetColumnSchema();
+
+                while (await reader.ReadAsync())
                 {
-                    var schema = reader.GetColumnSchema();
-
-                    while (await reader.ReadAsync())
+                    if (!reader.HasRows)
                     {
-                        if (!reader.HasRows)
-                        {
-                            break;
-                        }
-
-                        records.Add(MapQueryResult<TRecord>(schema, reader));
+                        break;
                     }
 
+                    records.Add(MapQueryResult<TRecord>(schema, reader));
                 }
 
-                return records;
             }
+
+            return records;
         }
 
         private TObject MapQueryResult<TObject>(ReadOnlyCollection<NpgsqlDbColumn> columns, NpgsqlDataReader reader)

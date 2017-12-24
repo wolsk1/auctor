@@ -63,10 +63,10 @@
   <ItemGroup>
     <Compile Include="ApiErrorModel.cs" />
     <Compile Include="ApiResult.cs" />
-    <Compile Include="AutofacConfig.cs" />
+    <Compile Include="Configuration\AutofacConfig.cs" />
     <Compile Include="AutofacInitializer.cs" />
     <Compile Include="AuctorTable.cs" />
-    <Compile Include="ConnectionStrings.cs" />
+    <Compile Include="Configuration\ConnectionStrings.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Domain\ConsultationEvent.cs" />
@@ -89,9 +89,9 @@
     <Compile Include="IDbProvider.cs" />
     <Compile Include="NoCacheHeaderFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AppSettings.cs" />
-    <Compile Include="SettingsHelper.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="Configuration\AppSettings.cs" />
+    <Compile Include="Configuration\SettingsHelper.cs" />
+    <Compile Include="Configuration\Startup.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
