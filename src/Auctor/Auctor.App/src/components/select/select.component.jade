@@ -8,6 +8,6 @@ select.btn-group.form-control.select(
             |  {{defaultValue}}
     option(
         *ngFor="let item of items",
-        [ngValue]="item.key")
-            | {{item.value}}
+        [ngValue]="item[valueMember]")
+            | {{item[displayMember]}}
 

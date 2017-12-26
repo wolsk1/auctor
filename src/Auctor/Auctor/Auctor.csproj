@@ -69,6 +69,7 @@
     <Compile Include="Configuration\ConnectionStrings.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ConsultationController.cs" />
     <Compile Include="Domain\ConsultationEvent.cs" />
     <Compile Include="Domain\Participant.cs" />
     <Compile Include="Domain\LecturerCourse.cs" />

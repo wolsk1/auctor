@@ -1,24 +1,30 @@
 .panel.panel.panel-default
   .panel-heading add-con
   .panel-body
-    form
-      .row
-        .col-lg-1
-          label date
-        .col-lg-2
-          ngx-datepicker([(ngModel)]="validFrom")
-        .col-lg-1
-          label start-time
-        .col-lg-2
-          input(type="time", [(ngModel)]="model.startTime")
-        .col-lg-1
-          label valid-till
-        .col-lg-2
-          input(type="time", [(ngModel)]="model.endTime")
-        .col-lg-1
+    .row
+      .col-lg-1
+        label date
+      .col-lg-2
+        ngx-datepicker([(ngModel)]="model.validFrom")
+      .col-lg-1
+        label start-time
+      .col-lg-2
+        input(type="time", [(ngModel)]="model.startTime")
+      .col-lg-1
+        label valid-till
+      .col-lg-2
+        input(type="time", [(ngModel)]="model.endTime")
+      .col-lg-1
           label room
-        .col-lg-2
-          v-select(                    
-              [items]='rooms',
-              [default-value]="roomsDefaultValue",
-              (selected)="setRoom($event)")
+      .col-lg-2
+        v-select(                    
+            [items]='rooms',
+            [default-value]="roomsDefaultValue",
+            [display-member]="'name'",
+            [value-member]="'id'",
+            (selected)="setRoom($event)")
+    .row
+      .col-lg-2
+        button((click)="save()")
+          |save
+      

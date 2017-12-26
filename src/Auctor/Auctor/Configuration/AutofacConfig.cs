@@ -31,6 +31,8 @@
                 .AsSelf();
             builder.RegisterType<UserController>()
                 .AsSelf();
+            builder.RegisterType<ConsultationController>()
+                .AsSelf();
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
         }

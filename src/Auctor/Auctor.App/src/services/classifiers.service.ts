@@ -3,24 +3,26 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 
 import {
-    IdCollection
+    Room,
+    Course
 } from './../models';
 import { ServiceUtils } from './';
 import { SettingsService } from './settings.service';
 import { HttpService } from './http.service';
 
 @Injectable()
-export class ConfigService extends HttpService {
+export class ClassifiersService extends HttpService {
     constructor(
         http: Http,
         settingsService: SettingsService) {
         super(http, settingsService);
     }
 
-    // public getCountryProducts(): Observable<IdCollection[]> {
-    //     return this.cacheWrapper<IdCollection[]>(
-    //         'country-products',
-    //         'countryProductsCache',
-    //         'countryProductsObservable');
-    // }
+    public getRooms(): Observable<Room[]> {
+        return this.cacheWrapper<Room[]>('db/rooms', 'rooms');
+    }
+
+    public getCourses(): Observable<Course[]> {
+        return this.cacheWrapper<Course[]>('db/courses', 'courses');
+    }
 }

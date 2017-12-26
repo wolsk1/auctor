@@ -1,11 +1,13 @@
 import {
     SettingsService,
-    ConfigService,
-    TitleService
+    ClassifiersService,
+    TitleService,
+    ConsultationService
 } from './services';
 
-export const POWERSTEERING_PROVIDERS = [
-    ConfigService,
+export const POWERSTEERING_PROVIDERS = [    
+    ClassifiersService,
     TitleService,
-    SettingsService
+    SettingsService,
+    ConsultationService
 ];

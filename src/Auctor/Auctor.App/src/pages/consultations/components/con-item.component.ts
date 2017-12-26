@@ -3,22 +3,37 @@ import {
   OnInit
 } from '@angular/core';
 
-import { ConItem } from '../models';
+import { ClassifiersService, ConsultationService } from '../../../services';
+
+import { Consultation } from '../../../models';
 
 @Component({
   selector: 'con-item',
   template: require('./con-item.component.jade')
 })
 export class ConItemComponent implements OnInit {
-  model: ConItem;
+  model: Consultation;
   rooms: any[];
 
-  constructor(){
-    this.model = new ConItem();
+
+  constructor(
+    private classifiers: ClassifiersService,
+    private consultations: ConsultationService) {
+    this.model = new Consultation();
     this.rooms = [];
   }
 
   public ngOnInit(): void {
-      
-  }   
+    this.classifiers.getRooms()
+      .subscribe(rooms => this.rooms = rooms);
+  }
+
+  private setRoom(room: string): void {
+    this.model.room = room;
+  }
+
+  private save(): void {
+    console.log(this.model)
+    this.consultations.addConsultation(this.model).subscribe();
+  }
 }

@@ -16,11 +16,15 @@ import { KeyValuePair } from './../../models';
 export class SelectComponent {
     constructor() {
         this.selected = new EventEmitter<string>();
+        this.displayMember = 'value';
+        this.valueMember = 'key';
     }
 
-    @Input() items: KeyValuePair[];
+    @Input() items: any[];
     @Input('init-selected-item') initSelectedKey: string;
     @Input('default-value') defaultValue: string;
+    @Input('value-member') valueMember: string;
+    @Input('display-member') displayMember: string;
     @Input() id: string;
     @Output() selected: EventEmitter<string>;
 
