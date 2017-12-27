@@ -5,7 +5,7 @@ import {
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { ClassifiersService, ConsultationService } from '../../../services';
+import { ClassifiersService, ConsultationService, TitleService } from '../../../services';
 
 import { Consultation } from '../../../models';
 
@@ -17,7 +17,8 @@ export class ConItemComponent implements OnInit {
   constructor(
     private classifiers: ClassifiersService,
     private consultations: ConsultationService,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+  private titleService: TitleService) {
     this.model = new Consultation();
     this.rooms = [];
   }
@@ -30,7 +31,10 @@ export class ConItemComponent implements OnInit {
   selectedRoom: string;
 
   public ngOnInit(): void {
-    this.route.data.subscribe(data => this.type = data["type"]);
+    this.route.data.subscribe(data => {
+      this.type = data["type"];
+      this.titleService.setTitle(`consultations ${this.type}`);
+    });
     this.route.params.subscribe(params => {
       this.model.id = params["id"];
       this.setupForm()
@@ -53,8 +57,7 @@ export class ConItemComponent implements OnInit {
     }
   }
 
-  private setupForm(): void {
-    
+  private setupForm(): void {    
     if (this.type == "edit" ) {
       this.consultations.getConsultation(this.model.id).subscribe(consultation => {
         this.model = consultation;
