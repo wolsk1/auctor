@@ -18,6 +18,21 @@ export class ConsultationService extends HttpService {
     }
 
     public addConsultation(consultation: Consultation): Observable<Response> {
-      return this.wrappedPost('consult/add', consultation);
+      return this.wrappedPost<any>('consult/add', consultation);
+    }
+
+    public updateConsultation(consulation: Consultation): Observable<Response> {
+        return this.wrappedPost<any>('consult/update', consulation);
+    }
+
+    public getConsultation(consulationId: string): Observable<Consultation> {
+        return this.wrappedPost<Consultation>('consult/find', consulationId);
+    }
+
+    public getConsultations(lecturerId: string): Observable<Consultation[]> {
+        return this.postCachedWrapper<object, Consultation[]>(
+            'db/consultations', 
+            'consultations',
+             { lecturerId: lecturerId});
     }
 }

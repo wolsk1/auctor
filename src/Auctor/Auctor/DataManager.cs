@@ -1,5 +1,6 @@
 ﻿namespace VolskNet.Auctor
 {
+    using Common;
     using Npgsql;
     using Npgsql.Schema;
     using System;
@@ -10,14 +11,43 @@
     using System.Threading.Tasks;
 
     public class DataManager : IDataManager
-    {      
+    {
         public async Task<IEnumerable<TRecord>> GetRecordsAsync<TRecord>(AuctorTable table)
         {
             using (var cmd = DbHelper.CreateCommand())
             {
-                cmd.CommandText = $"SELECT * FROM {AppSettings.DbSchema}.{table.ToString().ToLower()}";               
+                cmd.CommandText = $"SELECT * FROM {AppSettings.DbSchema}.{table.ToString().ToLower()}";
 
                 return await ExecuteAndFormatQuery<TRecord>(cmd);
+            }
+        }
+
+        public async Task<IEnumerable<TRecord>> GetConsultations<TRecord>(Guid? lecturerGuid)
+        {
+            using (var cmd = DbHelper.CreateCommand())
+            {
+                cmd.CommandText = $@"SELECT s.*, r.name as ""room_name"" FROM {AuctorTable.Consultation.ToString().ToLower()} s join {AuctorTable.Room.ToString().ToLower()} r on r.id = s.room_id";
+                if (lecturerGuid.HasValue)
+                {
+                    cmd.CommandText += $" WHERE s.lecturer_id = '{lecturerGuid.Value}'";
+                }
+
+                return await ExecuteAndFormatQuery<TRecord>(cmd);
+            }
+        }
+
+        public async Task<Consultation> GetConsultation(Guid consultationId)
+        {
+            using (var cmd = DbHelper.CreateCommand())
+            {
+                cmd.CommandText = $@"SELECT s.*, r.name as ""room_name"" 
+                    FROM {AuctorTable.Consultation.ToString().ToLower()} s 
+                    join {AuctorTable.Room.ToString().ToLower()} r on r.id = s.room_id
+                    WHERE s.id = '{consultationId}'";
+
+                var records = await ExecuteAndFormatQuery<Consultation>(cmd);
+
+                return records.FirstOrDefault();
             }
         }
 
@@ -53,14 +83,14 @@
                 object columnValue = null;
                 if (!column.ColumnOrdinal.HasValue)
                 {
-                    Console.WriteLine("Column has no ordinal value");                    
+                    Console.WriteLine("Column has no ordinal value");
                 }
                 else
                 {
                     columnValue = reader.GetValue(column.ColumnOrdinal.Value);
                 }
 
-                TrySetPropertyValue(instance, column.ColumnName, columnValue);
+                TrySetPropertyValue(instance, StringUtils.ToPascalCase(column.ColumnName, '_'), columnValue);
             }
 
             return instance;
@@ -68,7 +98,7 @@
 
         private void TrySetPropertyValue<TObject>(TObject @object, string propertyName, object propertyValue)
         {
-            var objectType = typeof(TObject);            
+            var objectType = typeof(TObject);
             var property = objectType.GetProperty(propertyName, BindingFlags.Public | BindingFlags.Instance);
 
             if (null == property || !property.CanWrite)
@@ -85,7 +115,7 @@
             {
                 newObject = GetDefault(property.PropertyType);
             }
-            
+
             property.SetValue(@object, newObject, null);
         }
 

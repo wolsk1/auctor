@@ -1,12 +1,13 @@
 import { Observable } from 'rxjs';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, RequestOptionsArgs, Headers } from '@angular/http';
 import { ServiceUtils } from './service.utils';
 import { SettingsService } from './settings.service';
+import { retry } from 'rxjs/operators/retry';
 
 export class HttpService {
     constructor(
         protected http: Http,
-        protected settingsService: SettingsService) { }    
+        protected settingsService: SettingsService) { }
 
     /**
      * Wrapper for observable
@@ -36,6 +37,29 @@ export class HttpService {
         return this[cacheableObservable];
     }
 
+    public postCachedWrapper<TInput, T>(
+        apiMethodPath: string,
+        storeName: string,
+        data: TInput): Observable<T> {
+
+        var cache: string = `${storeName}Cache`;
+        var cacheableObservable: string = `${storeName}Observable`;
+
+        if (this[cache]) {
+            return Observable.of(this[cache]);
+        }
+        else if (this[cacheableObservable]) {
+            return this[cacheableObservable];
+        }
+
+        this[cacheableObservable] = this.http.post(`${this.settingsService.apiPath}/${apiMethodPath}`, data)
+            .map((response: Response) => this[cache] = response.json())
+            .catch(this.handleError)
+            .share();
+
+        return this[cacheableObservable];
+    }
+
     /**
      * Post wrapper
      * @param apiMethodPath api method path
@@ -43,16 +67,23 @@ export class HttpService {
      */
     public wrappedPost<T>(
         apiMethodPath: string,
-        data: T): Observable<Response> {
+        data: any): Observable<T> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        let body = JSON.stringify(data);
         return this.http.post(
             `${this.settingsService.apiPath}/${apiMethodPath}`,
-            data);
+            body,
+            options)
+            .map((response: Response) => {
+                return response.json();
+            });
     }
 
     /**
      * Error handling
      * @param response http response variable
-     */      
+     */
     public handleError(error: Response | any) {
         let errMsg: string;
 

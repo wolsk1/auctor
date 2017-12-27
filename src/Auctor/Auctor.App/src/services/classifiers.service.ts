@@ -24,5 +24,5 @@ export class ClassifiersService extends HttpService {
 
     public getCourses(): Observable<Course[]> {
         return this.cacheWrapper<Course[]>('db/courses', 'courses');
-    }
+    }    
 }

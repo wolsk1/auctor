@@ -19,6 +19,7 @@
       .col-xs-12.col-lg-2
         v-select(                    
             [items]='rooms',
+            [init-selected-item]="selectedRoom",
             [default-value]="roomsDefaultValue",
             [display-member]="'name'",
             [value-member]="'id'",

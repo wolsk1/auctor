@@ -1,5 +1,6 @@
 ﻿namespace VolskNet.Auctor
-{    
+{
+    using System;
     using System.Threading.Tasks;
     using System.Web.Http;
 
@@ -49,11 +50,18 @@
             return Ok(documents);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("consultations")]
         public async Task<IHttpActionResult> GetConsultations()
         {
-            var documents = await dataManager.GetRecordsAsync<Consultation>(AuctorTable.Consultation);
+            var lecturerId = "3e4fdadc-cad6-4475-9d0a-2d752a796ca8";
+
+            if (string.IsNullOrEmpty(lecturerId))
+            {
+                return BadRequest();
+            }
+
+            var documents = await dataManager.GetConsultations<Consultation>(Guid.Parse(lecturerId));
 
             return Ok(documents);
         }

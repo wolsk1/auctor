@@ -1,7 +1,7 @@
 ﻿namespace VolskNet.Auctor
-{
-    using System.Threading.Tasks;
+{    
     using System.Web.Http;
+    using System.Threading.Tasks;
 
     [RoutePrefix("consult")]
     public class ConsultationController : BaseApiController
@@ -24,9 +24,9 @@
 
         [HttpPost]
         [Route("update")]
-        public IHttpActionResult Update()
-        {
-            return Ok();
+        public IHttpActionResult Update(Consultation consultation)
+        {            
+            return Ok(consultations.Update(consultation));
         }
 
         [HttpPost]
@@ -34,6 +34,15 @@
         public IHttpActionResult Delete()
         {
             return Ok();
+        }
+
+        [HttpPost]
+        [Route("find")]
+        public async Task<IHttpActionResult> Find([FromBody] string consultationId)
+        {            
+            var document = await consultations.FindAsync(consultationId);
+
+            return Ok(document);
         }
     }
 }
