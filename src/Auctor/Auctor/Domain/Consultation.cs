@@ -9,5 +9,6 @@
         public string EndTime { get; set; }
         public Guid RoomId { get; set; }
         public Guid LecturerId { get; set; }
+        public DateTime Date { get; set; }
     }
 }

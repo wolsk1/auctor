@@ -7,6 +7,7 @@ import {
 } from './models';
 
 export class CommonUtils {
+
     public static isObjectEmpty(map): boolean {
         for (var key in map) {
             return !map.hasOwnProperty(key);
@@ -26,4 +27,19 @@ export class CommonUtils {
             width: contentElement.clientWidth
         };
     }
+
+    public static getMinutesString(date: Date): string {
+        return (!!date)
+            ? date.getMinutes() < 10
+                ? '0' + date.getMinutes()
+                : date.getMinutes().toString()
+            : '00';
+    };
+    public static getHoursString(date: Date): string {
+        return (!!date)
+            ? date.getHours() < 10
+                ? '0' + date.getHours()
+                : date.getHours().toString()
+            : '00';
+    };
 }

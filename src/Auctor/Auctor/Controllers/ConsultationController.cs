@@ -1,42 +1,39 @@
 ﻿namespace VolskNet.Auctor
 {
-    using VolskNet.Auctor.Domain;
     using System.Threading.Tasks;
     using System.Web.Http;
 
     [RoutePrefix("consult")]
     public class ConsultationController : BaseApiController
     {
-        private readonly IDataManager dataManager;
+        private readonly IConsultationsManager consultations;
 
-        public ConsultationController(IDataManager dataManager)
+        public ConsultationController(IConsultationsManager consultations)
         {
-            this.dataManager = dataManager;
+            this.consultations = consultations;
         }
 
         [HttpPost]
         [Route("add")]
-        public async Task<IHttpActionResult> Add(Consultation consultation)
+        public IHttpActionResult Add(Consultation consultation)
+        {
+            var success = consultations.Add(consultation);
+
+            return Ok(success);
+        }
+
+        [HttpPost]
+        [Route("update")]
+        public IHttpActionResult Update()
         {
             return Ok();
         }
 
         [HttpPost]
-        [Route("update")]
-        public async Task<IHttpActionResult> Update()
-        {
-            var documents = await dataManager.GetRecordsAsync<Faculty>(AuctorTable.Faculty);
-
-            return Ok(documents);
-        }
-
-        [HttpPost]
         [Route("delete")]
-        public async Task<IHttpActionResult> Delete()
+        public IHttpActionResult Delete()
         {
-            var documents = await dataManager.GetRecordsAsync<Faculty>(AuctorTable.Faculty);
-
-            return Ok(documents);
+            return Ok();
         }
     }
 }

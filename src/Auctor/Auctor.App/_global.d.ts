@@ -6,6 +6,6 @@ declare global {
     const _appSettings: any;
     interface String {
         capitalize(): string;
-    }
+    }   
     let google: any;
 }

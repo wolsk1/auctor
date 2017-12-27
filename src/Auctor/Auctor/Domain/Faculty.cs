@@ -1,4 +1,4 @@
-﻿namespace VolskNet.Auctor.Domain
+﻿namespace VolskNet.Auctor
 {
     using System;
 

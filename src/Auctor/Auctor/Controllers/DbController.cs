@@ -1,6 +1,5 @@
 ﻿namespace VolskNet.Auctor
-{
-    using VolskNet.Auctor.Domain;
+{    
     using System.Threading.Tasks;
     using System.Web.Http;
 

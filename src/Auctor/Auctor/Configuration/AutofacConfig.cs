@@ -3,7 +3,6 @@
     using Autofac;
     using Autofac.Integration.WebApi;
     using System.Reflection;
-    using VolskNet.Auctor.Domain;
 
     internal class AutofacConfig : Autofac.Module
     {
@@ -17,10 +16,10 @@
 
         private static void RegisterManagers (ContainerBuilder builder)
         {
-            builder.RegisterType<Faculty>()
-               .AsSelf();
             builder.RegisterType<DataManager>()
                .As<IDataManager>();
+            builder.RegisterType<ConsultationsManager>()
+               .As<IConsultationsManager>();
         }
 
         private static void RegisterControllers(ContainerBuilder builder)

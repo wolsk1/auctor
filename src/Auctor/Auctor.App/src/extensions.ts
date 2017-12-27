@@ -1,3 +1,5 @@
+import { retry } from "rxjs/operator/retry";
+
 export { }
 if (!String.prototype.hasOwnProperty('capitalize')) {
     String.prototype.capitalize = function (): string {
