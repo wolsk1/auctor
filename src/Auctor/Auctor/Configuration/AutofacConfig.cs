@@ -20,7 +20,7 @@
             builder.RegisterType<DataManager>()
                .As<IDataManager>();
             builder.RegisterType<ConsultationsManager>()
-               .As<IConsultationsManager>();
+               .As<IRepository<Consultation>>();
             builder.RegisterType<EventRepository>()
                .As<IRepository<ConsultationEvent>>();
         }

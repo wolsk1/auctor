@@ -1,8 +1,9 @@
 ﻿namespace VolskNet.Auctor
 {
-    using System;
-    using System.Threading.Tasks;
     using Domain;
+    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;    
 
     public class EventRepository : IRepository<ConsultationEvent>
     {
@@ -30,20 +31,10 @@
             return cmd.ExecuteNonQuery() > 0;
         }
 
-        public bool Delete(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ConsultationEvent> FindAsync(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
         public bool Update(ConsultationEvent @event)
         {
             var cmd = DbHelper.CreateCommand();
-            cmd.CommandText = $@"UPDATE consultation
+            cmd.CommandText = $@"UPDATE consult_event
                                 SET name=@name, course_id=@course_id, value=@value,
                                 lecturer_id=@lecturer_id, need_lecturer=@need_lecturer, 
                                 valid_from=@valid_from, valid_till=@valid_till
@@ -58,6 +49,29 @@
             cmd.AddParam("@valid_till", @event.ValidTill);
 
             return cmd.ExecuteNonQuery() > 0;
+        }
+
+        public bool Delete(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<ConsultationEvent>> FindAsync(Guid guid, string idField = "id")
+        {
+            using (var cmd = DbHelper.CreateCommand())
+            {
+                cmd.CommandText = $@"SELECT s.*, c.name as ""course_name"" 
+                    FROM consult_event s 
+                    join course c on c.id = s.course_id
+                    WHERE s.{idField} = '{guid}'";
+
+                return await dataManager.ExecuteAndFormatQuery<ConsultationEvent>(cmd);
+            }
+        }
+
+        public Task<ConsultationEvent> FindByIdAsync(Guid id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

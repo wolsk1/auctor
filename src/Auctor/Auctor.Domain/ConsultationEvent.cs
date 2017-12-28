@@ -12,5 +12,6 @@
         public Guid CourseId { get; set; }
         public Guid LecturerId { get; set; }
         public bool NeedLecturer { get; set; }
+        public string CourseName { get; set; }
     }
 }

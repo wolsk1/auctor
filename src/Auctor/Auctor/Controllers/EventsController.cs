@@ -1,6 +1,8 @@
 ﻿namespace VolskNet.Auctor
 {
     using Domain;
+    using System;
+    using System.Linq;
     using System.Web.Http;
     using System.Threading.Tasks;
 
@@ -38,12 +40,26 @@
         }
 
         [HttpPost]
-        [Route("find")]
-        public async Task<IHttpActionResult> Find([FromBody] string consultationId)
+        [Route("findbyid")]
+        public async Task<IHttpActionResult> ById([FromBody] string id)
         {            
-            var document = await eventsRepository.FindAsync(System.Guid.Parse(consultationId));
+            var document = await eventsRepository.FindAsync(Guid.Parse(id));
 
-            return Ok(document);
+            return Ok(document.FirstOrDefault());
+        }
+
+        [HttpPost]
+        [Route("findbyfield")]
+        public async Task<IHttpActionResult> ByField([FromBody] string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return BadRequest();
+            }
+
+            var documents = await eventsRepository.FindAsync(Guid.Parse(id), "lecturer_id");
+
+            return Ok(documents);
         }
     }
 }

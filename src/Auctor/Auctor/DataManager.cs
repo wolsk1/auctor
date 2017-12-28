@@ -1,7 +1,6 @@
 ﻿namespace VolskNet.Auctor
 {
-    using Common;
-    using Domain;
+    using Common;    
     using Npgsql;
     using Npgsql.Schema;
     using System;
@@ -21,36 +20,7 @@
 
                 return await ExecuteAndFormatQuery<TRecord>(cmd);
             }
-        }
-
-        public async Task<IEnumerable<TRecord>> GetConsultations<TRecord>(Guid? lecturerGuid)
-        {
-            using (var cmd = DbHelper.CreateCommand())
-            {
-                cmd.CommandText = $@"SELECT s.*, r.name as ""room_name"" FROM {AuctorTable.Consultation.ToString().ToLower()} s join {AuctorTable.Room.ToString().ToLower()} r on r.id = s.room_id";
-                if (lecturerGuid.HasValue)
-                {
-                    cmd.CommandText += $" WHERE s.lecturer_id = '{lecturerGuid.Value}'";
-                }
-
-                return await ExecuteAndFormatQuery<TRecord>(cmd);
-            }
-        }
-
-        public async Task<Consultation> GetConsultation(Guid consultationId)
-        {
-            using (var cmd = DbHelper.CreateCommand())
-            {
-                cmd.CommandText = $@"SELECT s.*, r.name as ""room_name"" 
-                    FROM {AuctorTable.Consultation.ToString().ToLower()} s 
-                    join {AuctorTable.Room.ToString().ToLower()} r on r.id = s.room_id
-                    WHERE s.id = '{consultationId}'";
-
-                var records = await ExecuteAndFormatQuery<Consultation>(cmd);
-
-                return records.FirstOrDefault();
-            }
-        }
+        }        
 
         public async Task<IEnumerable<TRecord>> ExecuteAndFormatQuery<TRecord>(NpgsqlCommand cmd)
         {

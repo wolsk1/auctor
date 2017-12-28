@@ -1,9 +1,12 @@
 ﻿namespace VolskNet.Auctor
 {
     using Domain;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
-    public class ConsultationsManager : IConsultationsManager
+    public class ConsultationsManager : IRepository<Consultation>
     {
         private readonly IDataManager dataManager;
 
@@ -15,7 +18,7 @@
         public bool Add(Consultation consultation)
         {
             var cmd = DbHelper.CreateCommand();
-            cmd.CommandText = "INSERT INTO public.consultation values(default, @roomId, @lecturerId, @startTime, @endTime,@date)";
+            cmd.CommandText = "INSERT INTO consultation values(default, @roomId, @lecturerId, @startTime, @endTime,@date)";
 
             cmd.AddParam("@roomId", consultation.RoomId);
             cmd.AddParam("@lecturerId", consultation.LecturerId);
@@ -26,9 +29,37 @@
             return cmd.ExecuteNonQuery() > 0;
         }
 
-        public async Task<Consultation> FindAsync(string consultationId)
+        public bool Delete(Guid id)
         {
-            return await dataManager.GetConsultation(System.Guid.Parse(consultationId));
+            throw new NotImplementedException();
+        }        
+
+        public async Task<IEnumerable<Consultation>> FindAsync(Guid guid, string idField = "id")
+        {
+            using (var cmd = DbHelper.CreateCommand())
+            {
+                cmd.CommandText = $@"SELECT s.*, r.name as ""room_name"" 
+                    FROM {AuctorTable.Consultation.ToString().ToLower()} s 
+                    join {AuctorTable.Room.ToString().ToLower()} r on r.id = s.room_id
+                    WHERE s.{idField} = '{guid}'";
+
+                return await dataManager.ExecuteAndFormatQuery<Consultation>(cmd);
+            }
+        }
+
+        public async Task<Consultation> FindByIdAsync(Guid consultationId)
+        {                        
+            using (var cmd = DbHelper.CreateCommand())
+            {
+                cmd.CommandText = $@"SELECT s.*, r.name as ""room_name"" 
+                                    FROM {AuctorTable.Consultation.ToString().ToLower()} s 
+                                    join {AuctorTable.Room.ToString().ToLower()} r on r.id = s.room_id
+                                    WHERE s.id = '{consultationId}'";
+                
+                var consulations = await dataManager.ExecuteAndFormatQuery<Consultation>(cmd);
+
+                return consulations.FirstOrDefault();
+            }
         }
 
         public bool Update(Consultation consultation)

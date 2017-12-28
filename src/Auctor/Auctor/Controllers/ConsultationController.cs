@@ -1,15 +1,16 @@
 ﻿namespace VolskNet.Auctor
 {
     using Domain;
+    using System;
     using System.Web.Http;
     using System.Threading.Tasks;
 
     [RoutePrefix("consult")]
     public class ConsultationController : BaseApiController
     {
-        private readonly IConsultationsManager consultations;
+        private readonly IRepository<Consultation> consultations;
 
-        public ConsultationController(IConsultationsManager consultations)
+        public ConsultationController(IRepository<Consultation> consultations)
         {
             this.consultations = consultations;
         }
@@ -38,10 +39,19 @@
         }
 
         [HttpPost]
-        [Route("find")]
-        public async Task<IHttpActionResult> Find([FromBody] string consultationId)
-        {            
-            var document = await consultations.FindAsync(consultationId);
+        [Route("findbyid")]
+        public async Task<IHttpActionResult> ById([FromBody] string id)
+        {
+            var document = await consultations.FindAsync(Guid.Parse(id));
+
+            return Ok(document);
+        }
+
+        [HttpPost]
+        [Route("findbyfield")]
+        public async Task<IHttpActionResult> ByField([FromBody] string id)
+        {
+            var document = await consultations.FindAsync(Guid.Parse(id), "lecturer_id");
 
             return Ok(document);
         }

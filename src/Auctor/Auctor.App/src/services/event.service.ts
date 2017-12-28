@@ -30,10 +30,10 @@ export class EventService extends HttpService {
     }
 
     public find(eventId: string): Observable<Event> {
-        return this.wrappedPost<Event>('events/find', eventId);
+        return this.wrappedPost<Event>('events/findbyid', eventId);
     }
 
     public getAll(eventId: string): Observable<Event[]> {
-        return this.wrappedPost<Event[]>('events/all', eventId);
+        return this.wrappedPost<Event[]>('events/findbyfield', eventId);
     }
 }

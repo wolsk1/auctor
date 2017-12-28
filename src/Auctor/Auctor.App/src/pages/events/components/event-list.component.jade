@@ -10,18 +10,20 @@ br
 .panel.panel.panel-default
   .panel-heading
     .row
-      .col-lg-3 event-course
       .col-lg-3 event-name
-      .col-lg-3 value-in-minutes
       .col-lg-3 valid-period
+      .col-lg-2 event-course
+      .col-lg-1 value-in-minutes
+      .col-lg-1 need-lecturer
   .panel-body
      .row.g-row(*ngFor="let event of events; let last = last; let first = first", 
-              [ngClass]="{'last': last, 'first': first}")
-      .col-lg-3 {{event?.course}}
+              [ngClass]="{'last': last, 'first': first}")      
       .col-lg-3 {{event?.name}}
-      .col-lg-3 {{event?.value}}
-      .col-lg-3 {{event?.validFrom}} - {{event?.validTill}}
-      .col-lg-1
+      .col-lg-3 {{event?.validFrom | date: 'dd-MM-yyyy'}} - {{event?.validTill | date: 'dd-MM-yyyy'}}
+      .col-lg-2 {{event?.courseName}}
+      .col-lg-1 {{event?.value}}      
+      .col-lg-1 {{event?.needLecturer}}
+      .col-lg-2
         button.form-control.btn-success
           a(routerLink="/events/edit/{{event.id}}") edit-event
 

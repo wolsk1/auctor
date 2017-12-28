@@ -50,19 +50,5 @@
 
             return Ok(documents);
         }
-
-        [HttpPost]
-        [Route("consultations")]
-        public async Task<IHttpActionResult> GetConsultations([FromBody] string lecturerId)
-        {       
-            if (string.IsNullOrEmpty(lecturerId))
-            {
-                return BadRequest();
-            }
-
-            var documents = await dataManager.GetConsultations<Consultation>(Guid.Parse(lecturerId));
-
-            return Ok(documents);
-        }
     }
 }

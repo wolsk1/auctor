@@ -14,7 +14,7 @@ import { Event } from '../../../models';
 export class EventListComponent implements OnInit {   
 
     events: Event[];
-    consultationId: string = '';
+    consultationId: string = '3e4fdadc-cad6-4475-9d0a-2d752a796ca8';
     constructor(
         private eventsService: EventService,
         private titleService: TitleService) {
