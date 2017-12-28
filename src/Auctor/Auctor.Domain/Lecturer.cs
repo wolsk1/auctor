@@ -1,8 +1,8 @@
-﻿namespace VolskNet.Auctor
+﻿namespace VolskNet.Auctor.Domain
 {
     using System;
 
-    internal class Lecturer
+    public class Lecturer
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

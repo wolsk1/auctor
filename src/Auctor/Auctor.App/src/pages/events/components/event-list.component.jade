@@ -1,0 +1,27 @@
+.row
+  .col-lg-2
+    h1 event-list
+hr
+.row
+  .col-lg-2
+    button.form-control.btn-success
+      a(routerLink="/events/add") add-event
+br
+.panel.panel.panel-default
+  .panel-heading
+    .row
+      .col-lg-3 event-course
+      .col-lg-3 event-name
+      .col-lg-3 value-in-minutes
+      .col-lg-3 valid-period
+  .panel-body
+     .row.g-row(*ngFor="let event of events; let last = last; let first = first", 
+              [ngClass]="{'last': last, 'first': first}")
+      .col-lg-3 {{event?.course}}
+      .col-lg-3 {{event?.name}}
+      .col-lg-3 {{event?.value}}
+      .col-lg-3 {{event?.validFrom}} - {{event?.validTill}}
+      .col-lg-1
+        button.form-control.btn-success
+          a(routerLink="/events/edit/{{event.id}}") edit-event
+

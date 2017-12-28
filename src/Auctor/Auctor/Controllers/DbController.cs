@@ -1,5 +1,6 @@
 ﻿namespace VolskNet.Auctor
 {
+    using Domain;
     using System;
     using System.Threading.Tasks;
     using System.Web.Http;
@@ -52,10 +53,8 @@
 
         [HttpPost]
         [Route("consultations")]
-        public async Task<IHttpActionResult> GetConsultations()
-        {
-            var lecturerId = "3e4fdadc-cad6-4475-9d0a-2d752a796ca8";
-
+        public async Task<IHttpActionResult> GetConsultations([FromBody] string lecturerId)
+        {       
             if (string.IsNullOrEmpty(lecturerId))
             {
                 return BadRequest();

@@ -13,7 +13,7 @@ import { FooterModule } from '../footer/footer.module';
 import { HeaderModule } from '../header/header.module';
 import { DefaultModule } from './../default/default.module';
 import { 
-    ConEventModule,
+    EventsModule,
     ConsultationsModule
 } from '../pages';
 import { ConfigPanelModule } from './../config-panel/config-panel.module';
@@ -29,7 +29,7 @@ import { ConfigPanelModule } from './../config-panel/config-panel.module';
         HeaderModule,
         ComponentModule,
         DefaultModule
-        ,ConEventModule
+        ,EventsModule
         ,ConfigPanelModule
         ,ConsultationsModule
     ],

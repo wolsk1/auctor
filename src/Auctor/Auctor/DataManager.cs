@@ -1,6 +1,7 @@
 ﻿namespace VolskNet.Auctor
 {
     using Common;
+    using Domain;
     using Npgsql;
     using Npgsql.Schema;
     using System;

@@ -4,30 +4,30 @@
     using System.Web.Http;
     using System.Threading.Tasks;
 
-    [RoutePrefix("consult")]
-    public class ConsultationController : BaseApiController
+    [RoutePrefix("events")]
+    public class EventsController : BaseApiController
     {
-        private readonly IConsultationsManager consultations;
+        private readonly IRepository<ConsultationEvent> eventsRepository;
 
-        public ConsultationController(IConsultationsManager consultations)
+        public EventsController(IRepository<ConsultationEvent> eventsRepository)
         {
-            this.consultations = consultations;
+            this.eventsRepository = eventsRepository;
         }
 
         [HttpPost]
         [Route("add")]
-        public IHttpActionResult Add(Consultation consultation)
+        public IHttpActionResult Add(ConsultationEvent item)
         {
-            var success = consultations.Add(consultation);
+            var success = eventsRepository.Add(item);
 
             return Ok(success);
         }
 
         [HttpPost]
         [Route("update")]
-        public IHttpActionResult Update(Consultation consultation)
+        public IHttpActionResult Update(ConsultationEvent item)
         {            
-            return Ok(consultations.Update(consultation));
+            return Ok(eventsRepository.Update(item));
         }
 
         [HttpPost]
@@ -41,7 +41,7 @@
         [Route("find")]
         public async Task<IHttpActionResult> Find([FromBody] string consultationId)
         {            
-            var document = await consultations.FindAsync(consultationId);
+            var document = await eventsRepository.FindAsync(System.Guid.Parse(consultationId));
 
             return Ok(document);
         }

@@ -21,7 +21,7 @@ const homeRoutes: Routes = [
                 path: 'add',
                 component: ConItemComponent,
                 data: { type: "add" }
-            }
+            }            
         ]
     }    
 ];

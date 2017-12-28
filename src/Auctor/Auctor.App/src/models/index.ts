@@ -13,3 +13,4 @@ export * from './faculty';
 export * from './course';
 export * from './consultation';
 export * from './room';
+export * from './event';

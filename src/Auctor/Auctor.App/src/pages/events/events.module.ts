@@ -5,10 +5,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DatepickerModule } from 'ngx-date-picker';
 
 import { ComponentModule } from '../../components';
-import { EventConfComponent } from './event-conf.component';
-import { ConEventComponent } from './components/con-event.component';
-import { ConEventListComponent } from './components/con-event-list.component';
-import { routing } from './event-conf.routing';
+import { EventComponent } from './components/event.component';
+import { EventListComponent } from './components/event-list.component';
+import { routing } from './events.routing';
 
 
 @NgModule({
@@ -21,11 +20,10 @@ import { routing } from './event-conf.routing';
     ],
     providers: [
     ],
-    declarations: [
-        EventConfComponent,
-        ConEventComponent,
-        ConEventListComponent
+    declarations: [        
+        EventComponent,
+        EventListComponent
     ],
     exports: []
 })
-export class ConEventModule { }
+export class EventsModule { }

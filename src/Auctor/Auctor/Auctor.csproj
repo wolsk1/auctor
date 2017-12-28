@@ -70,23 +70,17 @@
     <Compile Include="ConsultationsManager.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\ConsultationController.cs" />
-    <Compile Include="Domain\ConsultationEvent.cs" />
-    <Compile Include="Domain\Participant.cs" />
-    <Compile Include="Domain\LecturerCourse.cs" />
-    <Compile Include="Domain\Course.cs" />
     <Compile Include="Controllers\DbController.cs" />
-    <Compile Include="Domain\Lecturer.cs" />
-    <Compile Include="Domain\Consultation.cs" />
-    <Compile Include="Domain\ConsultationEvents.cs" />
-    <Compile Include="Domain\Room.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="DbHelper.cs" />
     <Compile Include="DbProvider.cs" />
-    <Compile Include="Domain\Faculty.cs" />
     <Compile Include="ErrorActionResult.cs" />
+    <Compile Include="EventRepository.cs" />
     <Compile Include="HttpConfig.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="IConsultationsManager.cs" />
     <Compile Include="IDataManager.cs" />
     <Compile Include="IDbProvider.cs" />
@@ -201,7 +195,12 @@
       <Project>{9acc8998-9f5d-47ae-8ebe-cc3137a464a5}</Project>
       <Name>Auctor.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Auctor.Domain\Auctor.Domain.csproj">
+      <Project>{9bacc0fc-110f-4d6b-bbc9-ce8a21615296}</Project>
+      <Name>Auctor.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

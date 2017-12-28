@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { DatepickerModule } from 'ngx-date-picker';
 import { ComponentModule } from '../../components';
 
-import { ConsultationsComponent } from './consultations.component';
 import { ConListComponent } from './components/con-list.component';
 import { ConItemComponent } from './components/con-item.component';
 import { routing } from './consultations.routing';
@@ -19,9 +18,8 @@ import { routing } from './consultations.routing';
     ],
     providers: [
     ],
-    declarations: [
-        ConsultationsComponent
-        ,ConListComponent
+    declarations: [        
+        ConListComponent
         ,ConItemComponent
     ],
     exports: []

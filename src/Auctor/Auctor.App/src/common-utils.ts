@@ -42,4 +42,11 @@ export class CommonUtils {
                 : date.getHours().toString()
             : '00';
     };
+
+    public static addDays = (date: Date, days: number): Date => {
+        var newDate = _.clone(date);
+        newDate.setDate(newDate.getDate() + days);
+        
+        return newDate;
+    }
 }

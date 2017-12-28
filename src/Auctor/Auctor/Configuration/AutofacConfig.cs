@@ -1,5 +1,6 @@
 ﻿namespace VolskNet.Auctor
-{    
+{
+    using Domain;
     using Autofac;
     using Autofac.Integration.WebApi;
     using System.Reflection;
@@ -20,6 +21,8 @@
                .As<IDataManager>();
             builder.RegisterType<ConsultationsManager>()
                .As<IConsultationsManager>();
+            builder.RegisterType<EventRepository>()
+               .As<IRepository<ConsultationEvent>>();
         }
 
         private static void RegisterControllers(ContainerBuilder builder)
