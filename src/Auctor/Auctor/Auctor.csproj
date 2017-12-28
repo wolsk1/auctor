@@ -67,7 +67,7 @@
     <Compile Include="AutofacInitializer.cs" />
     <Compile Include="AuctorTable.cs" />
     <Compile Include="Configuration\ConnectionStrings.cs" />
-    <Compile Include="ConsultationsManager.cs" />
+    <Compile Include="Repos\ConsultationsManager.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
@@ -78,9 +78,9 @@
     <Compile Include="DbHelper.cs" />
     <Compile Include="DbProvider.cs" />
     <Compile Include="ErrorActionResult.cs" />
-    <Compile Include="EventRepository.cs" />
+    <Compile Include="Repos\EventRepository.cs" />
     <Compile Include="HttpConfig.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="Repos\IRepository.cs" />
     <Compile Include="IConsultationsManager.cs" />
     <Compile Include="IDataManager.cs" />
     <Compile Include="IDbProvider.cs" />

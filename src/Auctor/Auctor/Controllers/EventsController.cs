@@ -11,7 +11,8 @@
     {
         private readonly IRepository<ConsultationEvent> eventsRepository;
 
-        public EventsController(IRepository<ConsultationEvent> eventsRepository)
+        public EventsController(
+            IRepository<ConsultationEvent> eventsRepository)
         {
             this.eventsRepository = eventsRepository;
         }

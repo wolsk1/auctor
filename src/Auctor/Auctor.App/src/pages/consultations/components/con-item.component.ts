@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { ClassifiersService, ConsultationService, TitleService } from '../../../services';
 
-import { Consultation } from '../../../models';
+import { Consultation, Room } from '../../../models';
 
 @Component({
   selector: 'con-item',
@@ -29,6 +29,7 @@ export class ConItemComponent implements OnInit {
   rooms: any[];
   type: string = "add";
   selectedRoom: string;
+  
 
   public ngOnInit(): void {
     this.route.data.subscribe(data => {
@@ -44,8 +45,14 @@ export class ConItemComponent implements OnInit {
     this.model.lecturerId = this.lecturerId;
   }
 
-  private setRoom(room: string): void {
-    this.model.roomId = room;
+  private setRoom(room: Room): void {
+    if(!room){
+      return;
+    }
+    this.model.roomId = room.id;
+    if(this.model.capacity < 1){
+      this.model.capacity = room.capacity;
+    } 
   }
 
   private save(): void {
@@ -60,7 +67,7 @@ export class ConItemComponent implements OnInit {
   private setupForm(): void {    
     if (this.type == "edit" ) {
       this.consultations.getConsultation(this.model.id).subscribe(consultation => {
-        this.model = consultation;
+        this.model = new Consultation();
         this.selectedRoom = consultation.roomId;        
       });
     }

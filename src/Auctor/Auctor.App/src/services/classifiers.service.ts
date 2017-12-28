@@ -16,7 +16,7 @@ export class ClassifiersService extends HttpService {
         http: Http,
         settingsService: SettingsService) {
         super(http, settingsService);
-    }
+    }    
 
     public getRooms(): Observable<Room[]> {
         return this.cacheWrapper<Room[]>('db/rooms', 'rooms');

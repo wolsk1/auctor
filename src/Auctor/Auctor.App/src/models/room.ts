@@ -1,5 +1,6 @@
 export class Room {
-  private id: string;
-  private name: number;
-  private departmentId: string;
+  public id: string;
+  public name: number;
+  public capacity: number;
+  public departmentId: string;
 }

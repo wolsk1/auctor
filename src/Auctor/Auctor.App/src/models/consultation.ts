@@ -5,6 +5,7 @@ export class Consultation {
     this.date = new Date();
     this.startTime = `${CommonUtils.getHoursString(this.date)}:${CommonUtils.getMinutesString(this.date)}`;
     this.endTime = `${CommonUtils.getHoursString(this.date)}:${CommonUtils.getMinutesString(this.date)}`;
+    this.capacity = 1;
   }
 
   public id: string;
@@ -13,4 +14,5 @@ export class Consultation {
   public endTime: string;
   public roomId: string;
   public lecturerId: string;
+  public capacity: number;
 }

@@ -18,13 +18,15 @@
         public bool Add(Consultation consultation)
         {
             var cmd = DbHelper.CreateCommand();
-            cmd.CommandText = "INSERT INTO consultation values(default, @roomId, @lecturerId, @startTime, @endTime,@date)";
+            cmd.CommandText = @"INSERT INTO consultation 
+                                values(default, @roomId, @lecturerId, @startTime, @endTime,@date, @capacity)";
 
             cmd.AddParam("@roomId", consultation.RoomId);
             cmd.AddParam("@lecturerId", consultation.LecturerId);
             cmd.AddParam("@startTime", consultation.StartTime);
             cmd.AddParam("@endTime", consultation.EndTime);
             cmd.AddParam("@date", consultation.Date);
+            cmd.AddParam("@capacity", consultation.Capacity);
 
             return cmd.ExecuteNonQuery() > 0;
         }
@@ -67,7 +69,7 @@
             var cmd = DbHelper.CreateCommand();
             cmd.CommandText = $@"UPDATE consultation
                                 SET room_id =@roomId, lecturer_id =@lecturerId,
-                                start_time =@startTime, end_time =@endTime, date =@date
+                                start_time =@startTime, end_time =@endTime, date =@date, capacity=@capacity
                                 WHERE id='{consultation.Id}'; ";
 
             cmd.AddParam("@roomId", consultation.RoomId);
@@ -75,6 +77,7 @@
             cmd.AddParam("@startTime", consultation.StartTime);
             cmd.AddParam("@endTime", consultation.EndTime);
             cmd.AddParam("@date", consultation.Date);
+            cmd.AddParam("@capacity", consultation.Capacity);
 
             return cmd.ExecuteNonQuery() > 0;
         }

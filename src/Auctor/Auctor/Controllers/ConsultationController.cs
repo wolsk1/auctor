@@ -4,13 +4,15 @@
     using System;
     using System.Web.Http;
     using System.Threading.Tasks;
+    using System.Linq;
 
     [RoutePrefix("consult")]
     public class ConsultationController : BaseApiController
     {
         private readonly IRepository<Consultation> consultations;
 
-        public ConsultationController(IRepository<Consultation> consultations)
+        public ConsultationController(
+            IRepository<Consultation> consultations)
         {
             this.consultations = consultations;
         }
@@ -44,7 +46,7 @@
         {
             var document = await consultations.FindAsync(Guid.Parse(id));
 
-            return Ok(document);
+            return Ok(document.FirstOrDefault());
         }
 
         [HttpPost]

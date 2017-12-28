@@ -13,6 +13,7 @@ br
       .col-lg-3 date
       .col-lg-2 start-time
       .col-lg-2 end-time
+      .col-lg-1 capacity
       .col-lg-1 room      
   .panel-body
     .row.g-row(*ngFor="let con of cons; let last = last; let first = first", 
@@ -20,6 +21,7 @@ br
       .col-lg-3 {{con?.date | date: 'dd-MM-yyyy'}}
       .col-lg-2 {{con?.startTime}}
       .col-lg-2 {{con?.endTime}}
+      .col-lg-1 {{con?.capacity}}
       .col-lg-1 {{con?.roomName}}
       .col-lg-2
         button.form-control.btn-success
