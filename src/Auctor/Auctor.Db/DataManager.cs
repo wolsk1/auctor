@@ -1,6 +1,5 @@
-﻿namespace VolskNet.Auctor
-{
-    using Common;    
+﻿namespace VolskNet.Auctor.Db
+{        
     using Npgsql;
     using Npgsql.Schema;
     using System;
@@ -16,7 +15,7 @@
         {
             using (var cmd = DbHelper.CreateCommand())
             {
-                cmd.CommandText = $"SELECT * FROM {AppSettings.DbSchema}.{table.ToString().ToLower()}";
+                cmd.CommandText = $"SELECT * FROM {table.ToString().ToLower()}";
 
                 return await ExecuteAndFormatQuery<TRecord>(cmd);
             }

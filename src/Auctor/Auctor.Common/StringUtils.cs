@@ -1,4 +1,4 @@
-﻿namespace VolskNet.Auctor.Common
+﻿namespace VolskNet.Auctor
 {
     using System.Linq;
 

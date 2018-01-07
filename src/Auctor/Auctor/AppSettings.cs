@@ -1,4 +1,4 @@
-﻿namespace VolskNet.Auctor
+﻿namespace VolskNet.Auctor.Api
 {
     internal static class AppSettings
     {

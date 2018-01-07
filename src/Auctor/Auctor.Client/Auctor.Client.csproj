@@ -11,12 +11,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F33E0FBC-A91F-46C3-9EF0-833A5B1FD91B}</ProjectGuid>
+    <ProjectGuid>{F1A13FCF-D2D1-4E46-8A1E-5AF1F83B645A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VolskNet.Auctor.Api</RootNamespace>
-    <AssemblyName>VolskNet.Auctor.Api</AssemblyName>
+    <RootNamespace>VolskNet.Auctor.Admin</RootNamespace>
+    <AssemblyName>VolskNet.Auctor.Admin</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -58,22 +58,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutofacConfig.cs" />
     <Compile Include="AutofacInitializer.cs" />
-    <Compile Include="ConnectionStrings.cs" />
-    <Compile Include="Controllers\EventsController.cs" />
-    <Compile Include="Controllers\ConsultationController.cs" />
-    <Compile Include="Controllers\DbController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AppSettings.cs" />
     <Compile Include="SettingsHelper.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Repos\ConsultationsRepository.cs" />
-    <Compile Include="Repos\EventRepository.cs" />
-    <Compile Include="Repos\IRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
@@ -176,10 +171,6 @@
     <ProjectReference Include="..\Auctor.Common\Auctor.Common.csproj">
       <Project>{9acc8998-9f5d-47ae-8ebe-cc3137a464a5}</Project>
       <Name>Auctor.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Auctor.Db\Auctor.Db.csproj">
-      <Project>{6be05792-4678-4214-a9b9-8f9f7bd5ef1b}</Project>
-      <Name>Auctor.Db</Name>
     </ProjectReference>
     <ProjectReference Include="..\Auctor.Domain\Auctor.Domain.csproj">
       <Project>{9bacc0fc-110f-4d6b-bbc9-ce8a21615296}</Project>

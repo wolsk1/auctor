@@ -1,4 +1,4 @@
-﻿namespace VolskNet.Auctor.Api
+﻿namespace VolskNet.Auctor.Admin
 {
     using Autofac;
     using System.Reflection;

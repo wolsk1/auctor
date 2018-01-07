@@ -1,7 +1,7 @@
-﻿namespace VolskNet.Auctor
+﻿namespace VolskNet.Auctor.Api
 {
-    using Domain;
-    using System;
+    using Db;
+    using Domain;    
     using System.Threading.Tasks;
     using System.Web.Http;
 

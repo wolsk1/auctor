@@ -4,7 +4,7 @@
     using System.Configuration;
     using System.Linq;
 
-    internal static class Utils
+    public static class Utils
     {
         /// <summary>
         /// Gets the property value.

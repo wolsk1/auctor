@@ -1,4 +1,4 @@
-﻿namespace VolskNet.Auctor
+﻿namespace VolskNet.Auctor.Api
 {
     using Microsoft.Owin;
     using Newtonsoft.Json;

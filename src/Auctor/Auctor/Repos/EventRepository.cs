@@ -1,5 +1,6 @@
-﻿namespace VolskNet.Auctor
+﻿namespace VolskNet.Auctor.Api
 {
+    using Db;
     using Domain;
     using System;
     using System.Collections.Generic;

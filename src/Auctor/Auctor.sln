@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auctor.Db", "Auctor.Db\Auct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auctor.Domain", "Auctor.Domain\Auctor.Domain.csproj", "{9BACC0FC-110F-4D6B-BBC9-CE8A21615296}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auctor.Admin", "Auctor.Admin\Auctor.Admin.csproj", "{F1A13FCF-D2D1-4E46-8A1E-5AF1F83B645A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{9BACC0FC-110F-4D6B-BBC9-CE8A21615296}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BACC0FC-110F-4D6B-BBC9-CE8A21615296}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BACC0FC-110F-4D6B-BBC9-CE8A21615296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1A13FCF-D2D1-4E46-8A1E-5AF1F83B645A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A13FCF-D2D1-4E46-8A1E-5AF1F83B645A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A13FCF-D2D1-4E46-8A1E-5AF1F83B645A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A13FCF-D2D1-4E46-8A1E-5AF1F83B645A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,6 @@
-﻿namespace VolskNet.Auctor
+﻿namespace VolskNet.Auctor.Api
 {
+    using Db;
     using Domain;
     using Autofac;
     using Autofac.Integration.WebApi;
@@ -10,8 +11,7 @@
         protected override void Load(ContainerBuilder builder)
         {
             base.Load(builder);
-            RegisterManagers(builder);
-            //RegisterProviders(builder);
+            RegisterManagers(builder);            
             RegisterControllers(builder);
         }
 
@@ -19,30 +19,20 @@
         {
             builder.RegisterType<DataManager>()
                .As<IDataManager>();
-            builder.RegisterType<ConsultationsManager>()
+            builder.RegisterType<ConsultationsRepository>()
                .As<IRepository<Consultation>>();
             builder.RegisterType<EventRepository>()
                .As<IRepository<ConsultationEvent>>();
         }
 
         private static void RegisterControllers(ContainerBuilder builder)
-        {
-            builder.RegisterType<TestController>()
-                .AsSelf();
+        {            
             builder.RegisterType<DbController>()
-                .AsSelf();
-            builder.RegisterType<UserController>()
-                .AsSelf();
+                .AsSelf();            
             builder.RegisterType<ConsultationController>()
                 .AsSelf();
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
         }
-
-        //private static void RegisterProviders(ContainerBuilder builder)
-        //{
-        //    builder.RegisterType<DocumentProvider>()
-        //       .As<IDocumentProvider>();
-        //}
     }
 }

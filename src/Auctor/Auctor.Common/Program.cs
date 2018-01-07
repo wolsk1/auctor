@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace VolskNet.Auctor.Common
+﻿namespace VolskNet.Auctor
 {
+    using System;
+
     internal class Program
     {
         public static void Main(string[] args)

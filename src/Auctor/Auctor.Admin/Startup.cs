@@ -1,5 +1,5 @@
-﻿[assembly: Microsoft.Owin.OwinStartup(typeof(VolskNet.Auctor.Startup))]
-namespace VolskNet.Auctor
+﻿[assembly: Microsoft.Owin.OwinStartup(typeof(VolskNet.Auctor.Admin.Startup))]
+namespace VolskNet.Auctor.Admin
 {   
     using Autofac;
     using Microsoft.Owin;
@@ -18,9 +18,6 @@ namespace VolskNet.Auctor
 
     public class Startup
     {
-        private const string DEFAULT_DOCUMENT = "index.html";
-        private const string ERROR_DOCUMENT = "error.html";
-
         private static readonly Regex file = new Regex(
            @"(?i)\.[a-z0-9]+(\?\S+)?$",
            RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -47,7 +44,7 @@ namespace VolskNet.Auctor
                 var config = HttpConfig.SetHttpConfiguration(container);
                 config.MapHttpAttributeRoutes();
                 ConfigureCors(app);
-                ConfigureApiService(app, config);
+                //ConfigureApiService(app, config);
                 ConfigureWebPages(app, wwwroot);
 
                 app.UseStageMarker(PipelineStage.MapHandler);
@@ -62,13 +59,13 @@ namespace VolskNet.Auctor
             }
         }
 
-        private static void ConfigureApiService(IAppBuilder app, HttpConfiguration httpConfiguration)
-        {
-            app.Map($"/{AppSettings.ApiPrefix}", pipeline =>
-            {
-                pipeline.UseWebApi(httpConfiguration);
-            });
-        }
+        //private static void ConfigureApiService(IAppBuilder app, HttpConfiguration httpConfiguration)
+        //{
+        //    app.Map($"/{AppSettings.ApiPrefix}", pipeline =>
+        //    {
+        //        pipeline.UseWebApi(httpConfiguration);
+        //    });
+        //}
 
         private static void ConfigureWebPages(IAppBuilder app, string wwwroot)
         {
@@ -81,7 +78,7 @@ namespace VolskNet.Auctor
                     return SendHtmlFile(
                         context,
                         path.Substring(0, path.LastIndexOf("/auctor", StringComparison.OrdinalIgnoreCase)),
-                        Path.Combine(wwwroot, DEFAULT_DOCUMENT));
+                        Path.Combine(wwwroot, AppSettings.DefaultPage));
                 });
             });
 
@@ -93,8 +90,8 @@ namespace VolskNet.Auctor
 
                     return SendHtmlFile(
                         context,
-                        path.Substring(0, path.LastIndexOf("/error", StringComparison.OrdinalIgnoreCase)),
-                        Path.Combine(wwwroot, ERROR_DOCUMENT));
+                        path.Substring(0, path.LastIndexOf("error", StringComparison.OrdinalIgnoreCase)),
+                        Path.Combine(wwwroot, AppSettings.ErrorPage));
                 });
             });
 
@@ -119,7 +116,7 @@ namespace VolskNet.Auctor
                 return SendHtmlFile(
                     context,
                     context.Request.PathBase.ToString(),
-                    Path.Combine(wwwroot, isFile ? ERROR_DOCUMENT : DEFAULT_DOCUMENT),
+                    Path.Combine(wwwroot, isFile ? AppSettings.ErrorPage : AppSettings.DefaultPage),
                     isFile ? HttpStatusCode.NotFound : HttpStatusCode.OK);
             });
         }

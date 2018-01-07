@@ -1,16 +1,17 @@
-﻿namespace VolskNet.Auctor
+﻿namespace VolskNet.Auctor.Api
 {
+    using Db;
     using Domain;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
-    public class ConsultationsManager : IRepository<Consultation>
+    public class ConsultationsRepository : IRepository<Consultation>
     {
         private readonly IDataManager dataManager;
 
-        public ConsultationsManager(IDataManager dataManager)
+        public ConsultationsRepository(IDataManager dataManager)
         {
             this.dataManager = dataManager;
         }
