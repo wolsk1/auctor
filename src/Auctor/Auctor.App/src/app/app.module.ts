@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { COMPILER_PROVIDERS } from '@angular/compiler';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 import { ComponentModule } from '../components';
 import { ErrorPageModule } from '../error-page';
@@ -16,22 +17,20 @@ import {
     EventsModule,
     ConsultationsModule
 } from '../pages';
-import { ConfigPanelModule } from './../config-panel/config-panel.module';
 
 @NgModule({
-    imports: [
-        appRouting,
-        ErrorPageModule,
+    imports: [               
         BrowserModule,
         FormsModule,
         HttpModule,
+        appRouting,
         FooterModule,
         HeaderModule,
         ComponentModule,
-        DefaultModule
-        ,EventsModule
-        ,ConfigPanelModule
-        ,ConsultationsModule
+        ErrorPageModule,
+        //DefaultModule,
+        //EventsModule,        
+        //ConsultationsModule,        
     ],
     declarations: [
         AppComponent

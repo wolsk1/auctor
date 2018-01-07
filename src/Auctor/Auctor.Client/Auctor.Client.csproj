@@ -11,12 +11,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F1A13FCF-D2D1-4E46-8A1E-5AF1F83B645A}</ProjectGuid>
+    <ProjectGuid>{885AF582-CAC9-4655-A0E0-44501BAFEBC1}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VolskNet.Auctor.Admin</RootNamespace>
-    <AssemblyName>VolskNet.Auctor.Admin</AssemblyName>
+    <RootNamespace>VolskNet.Auctor.Client</RootNamespace>
+    <AssemblyName>VolskNet.Auctor.Client</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />

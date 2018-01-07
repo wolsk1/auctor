@@ -1,5 +1,5 @@
-﻿[assembly: Microsoft.Owin.OwinStartup(typeof(VolskNet.Auctor.Admin.Startup))]
-namespace VolskNet.Auctor.Admin
+﻿[assembly: Microsoft.Owin.OwinStartup(typeof(VolskNet.Auctor.Client.Startup))]
+namespace VolskNet.Auctor.Client
 {   
     using Autofac;
     using Microsoft.Owin;

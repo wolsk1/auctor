@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auctor.Domain", "Auctor.Dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auctor.Admin", "Auctor.Admin\Auctor.Admin.csproj", "{F1A13FCF-D2D1-4E46-8A1E-5AF1F83B645A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auctor.Client", "Auctor.Client\Auctor.Client.csproj", "{885AF582-CAC9-4655-A0E0-44501BAFEBC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{F1A13FCF-D2D1-4E46-8A1E-5AF1F83B645A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1A13FCF-D2D1-4E46-8A1E-5AF1F83B645A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1A13FCF-D2D1-4E46-8A1E-5AF1F83B645A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{885AF582-CAC9-4655-A0E0-44501BAFEBC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{885AF582-CAC9-4655-A0E0-44501BAFEBC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{885AF582-CAC9-4655-A0E0-44501BAFEBC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{885AF582-CAC9-4655-A0E0-44501BAFEBC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
