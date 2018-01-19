@@ -27,11 +27,11 @@ namespace VolskNet.Auctor.Api
         {
             var wwwroot = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "wwwroot");
             AutofacInitializer.Initialize();
-            var configurator = Configure(AutofacInitializer.AutofacContainer);
+            var configurator = Configure(wwwroot, AutofacInitializer.AutofacContainer);
             configurator(app);            
         }
 
-        public static Action<IAppBuilder> Configure(IContainer container)
+        public static Action<IAppBuilder> Configure(string wwwroot, IContainer container)
         {
             return app =>
             {
@@ -44,7 +44,8 @@ namespace VolskNet.Auctor.Api
                 var config = HttpConfig.SetHttpConfiguration(container);
                 config.MapHttpAttributeRoutes();
                 ConfigureCors(app);
-                ConfigureApiService(app, config);                
+                ConfigureApiService(app, config);
+                ConfigureWebPages(app, wwwroot);
 
                 app.UseStageMarker(PipelineStage.MapHandler);
             };
@@ -64,6 +65,98 @@ namespace VolskNet.Auctor.Api
             {
                 pipeline.UseWebApi(httpConfiguration);
             });
+        }
+
+        private static void ConfigureWebPages(IAppBuilder app, string wwwroot)
+        {
+            app.Map("/auctor", pipeline =>
+            {
+                pipeline.Use((context, next) =>
+                {
+                    var path = context.Request.PathBase.ToString();
+
+                    return SendHtmlFile(
+                        context,
+                        path.Substring(0, path.LastIndexOf("auctor", StringComparison.OrdinalIgnoreCase)),
+                        Path.Combine(wwwroot, AppSettings.DefaultPage));
+                });
+            });
+
+            app.Map("/error", pipeline =>
+            {
+                pipeline.Use((context, next) =>
+                {
+                    var path = context.Request.PathBase.ToString();
+
+                    return SendHtmlFile(
+                        context,
+                        path.Substring(0, path.LastIndexOf("error", StringComparison.OrdinalIgnoreCase)),
+                        Path.Combine(wwwroot, AppSettings.ErrorPage));
+                });
+            });
+
+            // Serve resources from root folder if they exists
+            app.UseFileServer(new FileServerOptions
+            {
+                RequestPath = PathString.Empty,
+                FileSystem = new PhysicalFileSystem(wwwroot),
+                EnableDirectoryBrowsing = false,
+                EnableDefaultFiles = false,
+                StaticFileOptions =
+                {
+                    ServeUnknownFileTypes = true
+                }
+            });
+
+            // Everything else goes to index.html or 404 if it matches file pattern
+            app.Use((context, next) =>
+            {
+                var isFile = file.IsMatch(context.Request.Path.Value.TrimStart('/'));
+
+                return SendHtmlFile(
+                    context,
+                    context.Request.PathBase.ToString(),
+                    Path.Combine(wwwroot, isFile ? AppSettings.ErrorPage : AppSettings.DefaultPage),
+                    isFile ? HttpStatusCode.NotFound : HttpStatusCode.OK);
+            });
+        }
+
+        private static Task SendHtmlFile(
+            IOwinContext context,
+            string originBasePath,
+            string filePath,
+            HttpStatusCode statusCode = HttpStatusCode.OK)
+        {
+            var basePath = originBasePath.Trim('/') + "/";
+
+            string appSettings;
+
+            try
+            {
+                appSettings = SettingsHelper.LoadAppSettings(context.Request);
+            }
+            catch (WebException)
+            {
+                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                return context.Response.WriteAsync(HttpStatusCode.InternalServerError.ToString());
+            }
+
+            var body = File
+                .ReadAllText(filePath)
+                .Replace("</head>", $"<script id='appSettings' type='application/javascript'>var _appSettings = {appSettings};</script></head>")
+                .Replace("$HTTP_STATUS$", $"{(int)statusCode} {statusCode}");
+
+            if (basePath != "/")
+            {
+                body = body.Replace("<base href=\"/\"", $"<base href=\"/{basePath}\"")
+                    .Replace("<base href=/", $"<base href=\"{basePath}\"");
+            }
+
+            var response = context.Response;
+            response.ContentType = "text/html";
+            response.StatusCode = (int)statusCode;
+
+            return response.WriteAsync(body);
         }
 
         private static CorsOptions GetCorsOptions()
