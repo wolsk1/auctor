@@ -28,9 +28,9 @@ import {
         HeaderModule,
         ComponentModule,
         ErrorPageModule,
-        //DefaultModule,
-        //EventsModule,        
-        //ConsultationsModule,        
+        DefaultModule,
+        EventsModule,        
+        ConsultationsModule,        
     ],
     declarations: [
         AppComponent
