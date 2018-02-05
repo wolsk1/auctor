@@ -1,10 +1,10 @@
 {
   "name": "auctor",
   "version": "1.0.0",
-  "description": "Consulation registration sys prototype",
+  "description": "Consulation registration prototype",
   "license": "UNLICENCED",
   "scripts": {
-    "build": "webpack --config webpack.config.dev.js --progress --display-error-details"
+    "build": "webpack --config webpack.config.dev.js --progress --display-error-details"    
   },
   "dependencies": {
     "@angular/common": "~4.3.4",
