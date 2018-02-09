@@ -1,9 +1,9 @@
-﻿namespace VolskNet.Auctor
+﻿namespace VolskNet.Auctor.Api
 {
     using Autofac;
     using System.Reflection;
 
-    internal static class AutofacInitializer
+    public static class AutofacInitializer
     {
         private static bool initializedAlready;
         private static readonly object lockTarget = new object();

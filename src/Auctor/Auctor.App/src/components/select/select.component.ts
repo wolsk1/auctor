@@ -1,3 +1,4 @@
+import * as _ from 'lodash';
 import {
     Component,
     Input,
@@ -16,13 +17,18 @@ import { KeyValuePair } from './../../models';
 export class SelectComponent {
     constructor() {
         this.selected = new EventEmitter<string>();
+        this.displayMember = 'value';
+        this.valueMember = 'key';
     }
 
-    @Input() items: KeyValuePair[];
+    @Input() items: any[];
     @Input('init-selected-item') initSelectedKey: string;
     @Input('default-value') defaultValue: string;
+    @Input('value-member') valueMember: string;
+    @Input('display-member') displayMember: string;
+    @Input('return-value-only') returnValueOnly: boolean = true;
     @Input() id: string;
-    @Output() selected: EventEmitter<string>;
+    @Output() selected: EventEmitter<any>;
 
     private selectedKey: string;
 
@@ -49,6 +55,13 @@ export class SelectComponent {
             emitKey = this.selectedKey = '';
         }
 
-        this.selected.emit(emitKey);
+        if (this.returnValueOnly) {
+            this.selected.emit(emitKey);
+            return;
+        }
+
+        this.selected.emit(
+            _.find(this.items, (value) =>
+                value[this.valueMember] == emitKey));
     }
 }

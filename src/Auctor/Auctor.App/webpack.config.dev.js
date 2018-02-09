@@ -5,7 +5,7 @@ module.exports = webpackConfig({
     devtool: 'source-map',
     clean: false,
     extractStyles: false,
-    optimize: true,
+    optimize: false,
     minify: false,
     output: {
         filename: '[name].js'

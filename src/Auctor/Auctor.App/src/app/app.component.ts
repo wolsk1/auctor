@@ -3,19 +3,19 @@ import {
     OnInit
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-
-import { Constants } from '../constants';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'body',
     template: require('./app.component.jade')
 })
 export class AppComponent {
-    public constructor(private titleService: Title) { }
+    public constructor(private titleService: Title,private router: Router) { }
 
     private pageReady: boolean;
 
     public ngOnInit(): void {      
         this.titleService.setTitle('Auctor');
+        console.log('configured routes: ', this.router.config);
     }
 }

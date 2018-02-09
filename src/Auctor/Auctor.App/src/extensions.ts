@@ -4,3 +4,4 @@ if (!String.prototype.hasOwnProperty('capitalize')) {
         return (!!this) ? this.charAt(0).toUpperCase() + this.substr(1).toLowerCase() : '';
     }
 }
+

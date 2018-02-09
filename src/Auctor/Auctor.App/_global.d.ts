@@ -7,5 +7,8 @@ declare global {
     interface String {
         capitalize(): string;
     }
+    interface DateTime extends Date {
+        addDays(days: number): DateTime;
+    }   
     let google: any;
 }

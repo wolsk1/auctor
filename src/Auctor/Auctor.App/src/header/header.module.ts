@@ -5,7 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-import { HeaderComponent } from './header.component'
+import { NavigationModule } from '../navigation/navigation.module';
+import { HeaderComponent } from './header.component';
 
 @NgModule({
     imports: [       
@@ -13,7 +14,8 @@ import { HeaderComponent } from './header.component'
         BrowserModule,
         CommonModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        NavigationModule
     ],
     declarations: [        
         HeaderComponent  

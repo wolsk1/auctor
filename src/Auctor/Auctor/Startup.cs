@@ -1,5 +1,5 @@
-﻿[assembly: Microsoft.Owin.OwinStartup(typeof(VolskNet.Auctor.Startup))]
-namespace VolskNet.Auctor
+﻿[assembly: Microsoft.Owin.OwinStartup(typeof(VolskNet.Auctor.Api.Startup))]
+namespace VolskNet.Auctor.Api
 {   
     using Autofac;
     using Microsoft.Owin;
@@ -18,9 +18,6 @@ namespace VolskNet.Auctor
 
     public class Startup
     {
-        private const string DEFAULT_DOCUMENT = "index.html";
-        private const string ERROR_DOCUMENT = "error.html";
-
         private static readonly Regex file = new Regex(
            @"(?i)\.[a-z0-9]+(\?\S+)?$",
            RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -80,8 +77,8 @@ namespace VolskNet.Auctor
 
                     return SendHtmlFile(
                         context,
-                        path.Substring(0, path.LastIndexOf("/auctor", StringComparison.OrdinalIgnoreCase)),
-                        Path.Combine(wwwroot, DEFAULT_DOCUMENT));
+                        path.Substring(0, path.LastIndexOf("auctor", StringComparison.OrdinalIgnoreCase)),
+                        Path.Combine(wwwroot, AppSettings.DefaultPage));
                 });
             });
 
@@ -93,8 +90,8 @@ namespace VolskNet.Auctor
 
                     return SendHtmlFile(
                         context,
-                        path.Substring(0, path.LastIndexOf("/error", StringComparison.OrdinalIgnoreCase)),
-                        Path.Combine(wwwroot, ERROR_DOCUMENT));
+                        path.Substring(0, path.LastIndexOf("error", StringComparison.OrdinalIgnoreCase)),
+                        Path.Combine(wwwroot, AppSettings.ErrorPage));
                 });
             });
 
@@ -119,14 +116,11 @@ namespace VolskNet.Auctor
                 return SendHtmlFile(
                     context,
                     context.Request.PathBase.ToString(),
-                    Path.Combine(wwwroot, isFile ? ERROR_DOCUMENT : DEFAULT_DOCUMENT),
+                    Path.Combine(wwwroot, isFile ? AppSettings.ErrorPage : AppSettings.DefaultPage),
                     isFile ? HttpStatusCode.NotFound : HttpStatusCode.OK);
             });
         }
 
-        /// <summary>
-        /// Overwrites BASE tag HREF attribute to match actual application public path on server
-        /// </summary>
         private static Task SendHtmlFile(
             IOwinContext context,
             string originBasePath,
@@ -135,11 +129,11 @@ namespace VolskNet.Auctor
         {
             var basePath = originBasePath.Trim('/') + "/";
 
-            string appSettings;           
+            string appSettings;
 
             try
-            {                
-                appSettings = SettingsHelper.LoadAppSettings(context.Request);                
+            {
+                appSettings = SettingsHelper.LoadAppSettings(basePath, context.Request);
             }
             catch (WebException)
             {
@@ -149,7 +143,7 @@ namespace VolskNet.Auctor
 
             var body = File
                 .ReadAllText(filePath)
-                .Replace("</head>", $"<script id='appSettings' type='application/javascript'>var _appSettings = {appSettings};</script></head>")                
+                .Replace("</head>", $"<script id='appSettings' type='application/javascript'>var _appSettings = {appSettings};</script></head>")
                 .Replace("$HTTP_STATUS$", $"{(int)statusCode} {statusCode}");
 
             if (basePath != "/")

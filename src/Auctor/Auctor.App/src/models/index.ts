@@ -9,3 +9,8 @@ export * from './id-collection';
 export * from './used-classifiers';
 export * from './label-element';
 export * from './ordered-element';
+export * from './faculty';
+export * from './course';
+export * from './consultation';
+export * from './room';
+export * from './event';

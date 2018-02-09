@@ -1,4 +1,4 @@
-﻿namespace VolskNet.Auctor
+﻿namespace VolskNet.Auctor.Api
 {
     using Microsoft.Owin;
     using Newtonsoft.Json;
@@ -10,9 +10,9 @@
         private static readonly JsonSerializerSettings serializerSettings = new JsonSerializerSettings
         {
             ContractResolver = new CamelCasePropertyNamesContractResolver()
-        };
+        };        
 
-        public static string LoadAppSettings(IOwinRequest request)
+        internal static string LoadAppSettings(string basePath, IOwinRequest request)
         {
             if (request == null)
             {
@@ -25,8 +25,8 @@
             return JsonConvert.SerializeObject(new
             {
                 Version = version,
-                BasePath = AppSettings.BaseHref,
-                ApiPath = $"{request.Scheme}://{request.Host.Value}/{AppSettings.ApiPrefix}",
+                BasePath = basePath,
+                ApiPath = $"{request.Scheme}://{request.Host.Value}/{basePath}{AppSettings.ApiPrefix}",
                 ConnectionProtocol = request.Scheme,
                 AppName = AppSettings.AppName
             }, serializerSettings);
