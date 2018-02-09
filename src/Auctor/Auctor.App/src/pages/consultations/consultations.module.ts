@@ -9,12 +9,12 @@ import { ConItemComponent } from './components/con-item.component';
 import { routing } from './consultations.routing';
 
 @NgModule({
-    imports: [
+    imports: [               
         routing,       
         CommonModule,
-        FormsModule
-        ,DatepickerModule
-        ,ComponentModule
+        FormsModule,
+        ComponentModule,
+        DatepickerModule
     ],
     providers: [
     ],

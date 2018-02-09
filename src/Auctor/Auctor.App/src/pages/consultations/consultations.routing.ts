@@ -6,10 +6,10 @@ import { ConItemComponent } from './components/con-item.component'
 
 const homeRoutes: Routes = [
     {
-        path: 'consulations',        
+        path: 'cons',        
         children: [
             {
-                path: 'list',
+                path: '',
                 component: ConListComponent                
             },
             {

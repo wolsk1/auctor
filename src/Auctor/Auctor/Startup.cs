@@ -133,7 +133,7 @@ namespace VolskNet.Auctor.Api
 
             try
             {
-                appSettings = SettingsHelper.LoadAppSettings(context.Request);
+                appSettings = SettingsHelper.LoadAppSettings(basePath, context.Request);
             }
             catch (WebException)
             {

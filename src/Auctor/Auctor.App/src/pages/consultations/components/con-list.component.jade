@@ -5,7 +5,7 @@ hr
 .row
   .col-lg-2
     button.form-control.btn-success
-      a(routerLink="/consulations/add") add-con
+      a([routerLink]="['add']") add-con
 br
 .panel.panel.panel-default
   .panel-heading
@@ -25,5 +25,5 @@ br
       .col-lg-1 {{con?.roomName}}
       .col-lg-2
         button.form-control.btn-success
-          a(routerLink="/consulations/edit/{{con.id}}") edit-con 
+          a([routerLink]="['edit', con.id]") edit-con 
      

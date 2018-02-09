@@ -12,8 +12,8 @@ import { AppComponent } from './app.component';
 import { appRouting } from './app.routing';
 import { FooterModule } from '../footer/footer.module';
 import { HeaderModule } from '../header/header.module';
-import { DefaultModule } from './../default/default.module';
 import { 
+    DefaultModule,
     EventsModule,
     ConsultationsModule
 } from '../pages';
