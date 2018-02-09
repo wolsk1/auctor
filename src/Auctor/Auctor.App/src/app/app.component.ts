@@ -5,8 +5,6 @@ import {
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
-import { Constants } from '../constants';
-
 @Component({
     selector: 'body',
     template: require('./app.component.jade')
