@@ -59,7 +59,7 @@ header.header(id="header" role="banner" aria-label="Site header")
         .main-header-content
             div
                 .site-branding(id="block-sitebranding")
-                    a.site-branding__logo(href="http://www.llu.lv/lv" title="Sākums" rel="home")
+                    a.site-branding__logo([routerLink]="['']" title="Sākums" rel="home")
                         img(src="http://www.llu.lv/themes/custom/LLU/lv_logo.svg" alt="Sākums")
             .social-media
                 div
@@ -86,3 +86,5 @@ header.header(id="header" role="banner" aria-label="Site header")
                             a(href="https://soundcloud.com/jelgava-student-podcast" target="_blank" rel="nofollow")
                                 img.align-center(alt="podcast" data-entity-type="file" data-entity-uuid="7c9dcb9d-f082-44ec-8856-95c1c129a4a3"
                                     src="http://www.llu.lv/sites/default/files/inline-images/new_podcast_0.png" title="Jelgava Student Podcast")
+            auctor-nav
+                
