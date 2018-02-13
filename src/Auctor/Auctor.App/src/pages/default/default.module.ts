@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { DefaultComponent } from './default.component';
+import { ComponentModule } from '../../components/component.module';
 import { routing } from './default.routing';
 
 @NgModule({
@@ -13,7 +14,8 @@ import { routing } from './default.routing';
         BrowserModule,
         CommonModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        ComponentModule
     ],
     providers: [
     ],

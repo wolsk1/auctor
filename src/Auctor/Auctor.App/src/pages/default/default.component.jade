@@ -1,48 +1,41 @@
-main.column.main-content.custom-article(id="content" role="main")
+main.column.main-content(id="content" role="main")
   section.section
     .block-mainpagecontent
       article(role="article")
-        div
-          div(property="schema:text")
-            div(id="submenu--main", style="margin-top: 30px;")
-              .custom--submenu--block
-                a(href="/")
-                  span.submenu_title Lauksaimniecības fakultāte
-                  .faculty-img-block.submen_image(style="background-image:url(http://www.llu.lv/sites/default/files/files/lapas/img_lf.gif);")
-                    |&nbsp;
-              .custom--submenu--block
-                a(href="/")
-                  span.submenu_title Meža fakultāte
-                  .faculty-img-block.submen_image(style="background-image:url(http://www.llu.lv/sites/default/files/files/lapas/img_lf.gif);")
-                    |&nbsp;
-              .custom--submenu--block
-                a(href="/")
-                  span.submenu_title Veterinārmedicīnas fakultāte
-                  .faculty-img-block.submen_image(style="background-image:url(http://www.llu.lv/sites/default/files/files/lapas/img_lf.gif);")
-                    |&nbsp;
-              .custom--submenu--block
-                a(href="/")
-                  span.submenu_title Tehniskā universitāte
-                  .faculty-img-block.submen_image(style="background-image:url(http://www.llu.lv/sites/default/files/files/lapas/img_lf.gif);")
-                    |&nbsp;
-              .custom--submenu--block
-                a(href="/")
-                  span.submenu_title Pārtikas tehnoloģiju fakultāte
-                  .faculty-img-block.submen_image(style="background-image:url(http://www.llu.lv/sites/default/files/files/lapas/img_lf.gif);")
-                    |&nbsp;
-              .custom--submenu--block
-                a(href="/")
-                  span.submenu_title Vides un būvzinātņu fakultāte
-                  .faculty-img-block.submen_image(style="background-image:url(http://www.llu.lv/sites/default/files/files/lapas/img_lf.gif);")
-                    |&nbsp;
-              .custom--submenu--block
-                a(href="/")
-                  span.submenu_title Informācijas tehnoloģiju fakultāte
-                  .faculty-img-block.submen_image(style="background-image:url(http://www.llu.lv/sites/default/files/files/lapas/img_lf.gif);")
-                    |&nbsp;
-              .custom--submenu--block
-                a(href="/")
-                  span.submenu_title Ekonomikas un sabiedrības attīstības fakultāte
-                  .faculty-img-block.submen_image(style="background-image:url(http://www.llu.lv/sites/default/files/files/lapas/img_lf.gif);")
-                    |&nbsp;
-.column.sidebar
+        .row
+          .form-group.col-lg-5
+            input.form-control(type="text", [(ngModel)]="searchText", placeholder="search text")
+          .col-lg-2
+            label Meklēt pēc:
+          .col-xs-12.col-lg-3
+            v-select(                    
+                [items]='searchOptions',
+                [init-selected-item]="defaultSearchOption",
+                [display-member]="'name'",
+                [value-member]="'id'",
+                [return-value-only]="!!false",
+                (selected)="setSearchOption($event)")
+        hr
+        .row
+          .col-lg-2
+            button Meklēt
+        hr
+        .row
+          .col-lg-2
+            h1 event-list
+        hr        
+        .panel.panel.panel-default
+          .panel-heading
+            .row
+              .col-lg-3 lecturer-name
+              .col-lg-3 lecturer-surname
+              .col-lg-2 lecturer-department              
+          .panel-body
+            .row.g-row(*ngFor="let lecturer of lecturers; let last = last; let first = first;", 
+                      [ngClass]="{'last': last, 'first': first}")      
+              .col-lg-3 {{lecturer?.name}}
+              .col-lg-3 {{lecturer?.surname}}
+              .col-lg-2 {{lecturer?.department}}
+
+
+              

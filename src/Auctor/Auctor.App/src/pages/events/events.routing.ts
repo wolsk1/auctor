@@ -9,7 +9,7 @@ const homeRoutes: Routes = [
         path: 'events',       
         children:[
             {
-                path: 'list',
+                path: '',
                 component: EventListComponent                
             },
             {
