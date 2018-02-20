@@ -2,7 +2,8 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ConListComponent } from './components/con-list.component';
-import { ConItemComponent } from './components/con-item.component'
+import { ConItemComponent } from './components/con-item.component';
+import { ConViewComponent } from './components/con-view.component';
 
 const homeRoutes: Routes = [
     {
@@ -11,6 +12,10 @@ const homeRoutes: Routes = [
             {
                 path: '',
                 component: ConListComponent                
+            },
+            {
+                path: 'view',
+                component: ConViewComponent                
             },
             {
                 path: 'edit/:id',
