@@ -21,16 +21,15 @@ export class ConViewComponent implements OnInit {
 
   public ngOnInit(): void {
     this.titleService.setTitle('cons-view');
-    //var weeks = this.calendarMatrix(this.year, this.month);
-    var months = [];
-    for (let i = 0; i < 12; i++) {
-      months.push(this.getMatrix(this.year, i));
-    }
-    console.info(months);
+    //var weeks = this.calendarMatrix(this.year, this.month);    
+    this.weeks = this.getMatrix(this.year, this.month);
   }
 
   private month: number;
   private year: number;
+  //TODO make day object with month and day in it
+  //Maybe a date object
+  private weeks: number[][]; 
 
   private monthDays(month) {
     var today = new Date();
