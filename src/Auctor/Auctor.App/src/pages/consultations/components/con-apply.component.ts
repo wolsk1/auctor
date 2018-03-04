@@ -1,9 +1,9 @@
 import * as _ from 'lodash';
 import {
     Component,
-    OnInit,
-    Input
+    OnInit
 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { ConsultationService, TitleService } from '../../../services';
 import { Consultation } from '../../../models';
@@ -13,17 +13,21 @@ import { Consultation } from '../../../models';
     template: require('./con-apply.component.jade')
 })
 export class ConApplyComponent implements OnInit {
-    constructor(
+    constructor(private titleService: TitleService,
         private consultations: ConsultationService,
-        private titleService: TitleService) {
+        private route: ActivatedRoute) {
         this.cons = [];
-        this.courseCode = 'TestCode'
     }
 
     cons: Consultation[];
-    courseCode: string;
+    courseCode: string = 'InfT6004';
+    lecturerId: string = '3e4fdadc-cad6-4475-9d0a-2d752a796ca8';
 
     public ngOnInit(): void {
-        this.titleService.setTitle('con-apply');       
+        this.titleService.setTitle('con-apply');
+        this.route.params.subscribe(params => {
+            this.courseCode = params["courseCode"];
+            this.lecturerId = params["lecturerId"];
+        })
     }
 }
