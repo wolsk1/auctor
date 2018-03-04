@@ -22,19 +22,21 @@ main.column.main-content(id="content" role="main")
         hr
         .row
           .col-lg-2
-            h1 event-list
+            h1 Pasniedzēji
         hr        
         .panel.panel.panel-default
           .panel-heading
             .row
-              .col-lg-3 lecturer-name
-              .col-lg-3 lecturer-surname
-              .col-lg-2 lecturer-department              
+              .col-lg-3 Vārds
+              .col-lg-3 Uzvārds
+              .col-lg-2 Fakultāte
+              .col-lg-2 Katedra              
           .panel-body
             .row.g-row(*ngFor="let lecturer of lecturers; let last = last; let first = first;", 
                       [ngClass]="{'last': last, 'first': first}")      
               .col-lg-3 {{lecturer?.name}}
               .col-lg-3 {{lecturer?.surname}}
+              .col-lg-3 {{lecturer?.faculty}}
               .col-lg-2 {{lecturer?.department}}
 
 
