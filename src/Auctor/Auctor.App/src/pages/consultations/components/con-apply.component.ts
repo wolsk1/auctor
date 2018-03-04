@@ -19,15 +19,32 @@ export class ConApplyComponent implements OnInit {
         this.cons = [];
     }
 
-    cons: Consultation[];
+    //TODO
+    /*
+    1. Konsultācijas id jābūt padotam kā parametram iekš URL
+    2. izgūt readonly info izmantojot to id
+    3. formas validācija
+    4. nosūtīt pieteikumu uz db
+    5. apmeklējuma mērķu ieguve
+     */
+
+    cons: Consultation[];    
     courseCode: string = 'InfT6004';
     lecturerId: string = '3e4fdadc-cad6-4475-9d0a-2d752a796ca8';
+    conId: string = 'e5135f8d-16a8-49a2-ae44-473105db27dd'
+    conDate: Date = new Date();
+    model: any = { 
+        conId: 'e5135f8d-16a8-49a2-ae44-473105db27dd',
+        matricula: 'IT12013'
+    }
 
     public ngOnInit(): void {
         this.titleService.setTitle('con-apply');
-        this.route.params.subscribe(params => {
-            this.courseCode = params["courseCode"];
-            this.lecturerId = params["lecturerId"];
-        })
+        this.route.params.subscribe(params => 
+            this.model.conId = params["conId"]);
+    }
+
+    private save(){
+
     }
 }

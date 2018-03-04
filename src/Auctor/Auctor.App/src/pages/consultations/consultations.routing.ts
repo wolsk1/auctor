@@ -19,7 +19,7 @@ const homeRoutes: Routes = [
                 component: ConViewComponent                
             },
             {
-                path: 'apply/:courseCode/:lecturerId',
+                path: 'apply/:conId',
                 component: ConApplyComponent                
             },
             {
