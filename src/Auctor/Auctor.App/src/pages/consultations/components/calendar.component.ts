@@ -8,8 +8,8 @@ import {
 import { TitleService } from '../../../services';
 
 @Component({
-  selector: 'con-view',
-  template: require('./con-view.component.jade')
+  selector: 'vs-calendar',
+  template: require('./calendar.component.jade')
 })
 export class ConViewComponent implements OnInit {
 

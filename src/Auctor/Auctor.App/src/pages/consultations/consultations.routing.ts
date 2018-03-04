@@ -15,7 +15,7 @@ const homeRoutes: Routes = [
                 component: ConListComponent                
             },
             {
-                path: 'view',
+                path: 'view/:conId',
                 component: ConViewComponent                
             },
             {

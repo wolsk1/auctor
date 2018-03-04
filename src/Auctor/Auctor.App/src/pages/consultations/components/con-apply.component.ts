@@ -39,7 +39,7 @@ export class ConApplyComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.titleService.setTitle('con-apply');
+        this.titleService.setTitle('Reģistrēties konsultācijai');
         this.route.params.subscribe(params => 
             this.model.conId = params["conId"]);
     }
