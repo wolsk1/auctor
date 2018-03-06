@@ -5,7 +5,7 @@ import {
 import { ActivatedRoute } from '@angular/router';
 
 import { ClassifiersService, ConsultationService, TitleService } from '../../../services';
-import { Consultation, Room, Course } from '../../../models';
+import { Course } from '../../../models';
 
 @Component({
   selector: 'courses-list',
