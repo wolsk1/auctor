@@ -15,7 +15,8 @@ import { HeaderModule } from '../header/header.module';
 import { 
     DefaultModule,
     EventsModule,
-    ConsultationsModule
+    ConsultationsModule,
+    CoursesModule
 } from '../pages';
 
 @NgModule({
@@ -30,7 +31,8 @@ import {
         ErrorPageModule,
         DefaultModule,
         EventsModule,        
-        ConsultationsModule,        
+        ConsultationsModule,
+        CoursesModule        
     ],
     declarations: [
         AppComponent

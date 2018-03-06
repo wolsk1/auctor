@@ -9,9 +9,15 @@ const routes: Routes = [
             {
                 path: '',
                 component: CoursesListComponent                
-            }      
+            },
+            // {
+            //     path: 'cons/:couseCode',
+            //     component: CoursesConsComponent                
+            // }      
         ]
     }    
 ];
+
+//TODO attēli pārāk ilgi ielādējas pirmajā ielādē
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
