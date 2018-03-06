@@ -2,6 +2,8 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CoursesListComponent } from './components/courses-list.component';
+import { CourseConsComponent } from './components/course-cons.component';
+
 const routes: Routes = [
     {
         path: 'courses',        
@@ -10,10 +12,10 @@ const routes: Routes = [
                 path: '',
                 component: CoursesListComponent                
             },
-            // {
-            //     path: 'cons/:couseCode',
-            //     component: CoursesConsComponent                
-            // }      
+            {
+                path: 'cons/:couseCode',
+                component: CourseConsComponent                
+            }      
         ]
     }    
 ];
