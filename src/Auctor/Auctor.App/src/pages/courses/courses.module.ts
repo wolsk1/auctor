@@ -7,9 +7,10 @@ import './courses.less';
 
 import { routing } from './courses.routing';
 import { CoursesListComponent } from './components/courses-list.component';
+import { CourseConsComponent } from './components/course-cons.component';
 
 @NgModule({
-    imports:[  
+    imports:[
         CommonModule,
         FormsModule,
         ComponentModule,
@@ -17,8 +18,9 @@ import { CoursesListComponent } from './components/courses-list.component';
     ],
     providers: [
     ],
-    declarations: [        
-        CoursesListComponent
+    declarations: [
+        CoursesListComponent,
+        CourseConsComponent
     ],
     exports: []
 })
