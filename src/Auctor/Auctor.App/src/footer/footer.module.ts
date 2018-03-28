@@ -5,20 +5,20 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-import { FooterComponent } from './footer.component'
+import { FooterComponent } from './footer.component';
 
 @NgModule({
-    imports: [       
+    imports: [
         RouterModule,
         BrowserModule,
         CommonModule,
         FormsModule,
         HttpModule
     ],
-    declarations: [        
-        FooterComponent  
+    declarations: [
+        FooterComponent
     ],
-    exports: [        
+    exports: [
         FooterComponent
     ]
 })
