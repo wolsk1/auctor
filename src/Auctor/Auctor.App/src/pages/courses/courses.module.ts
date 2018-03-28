@@ -8,6 +8,7 @@ import './courses.less';
 import { routing } from './courses.routing';
 import { CoursesListComponent } from './components/courses-list.component';
 import { CourseConsComponent } from './components/course-cons.component';
+import { CourseConViewComponent } from './components/course-con-view.component';
 
 @NgModule({
     imports:[
@@ -20,7 +21,8 @@ import { CourseConsComponent } from './components/course-cons.component';
     ],
     declarations: [
         CoursesListComponent,
-        CourseConsComponent
+        CourseConsComponent,
+        CourseConViewComponent
     ],
     exports: []
 })

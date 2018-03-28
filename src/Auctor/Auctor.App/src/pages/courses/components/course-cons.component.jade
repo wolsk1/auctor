@@ -1,1 +1,14 @@
-h1 kalendārs ar konsultācijām
+.panel.panel.panel-default
+  .panel-heading
+    h2 Konsultāciju saraksts
+  .panel-body
+    .coursebox.clearfix.odd(*ngFor="let con of cons")
+      .row
+        .col-lg-3.info
+          h3.coursename
+            // group by day and order by time
+            a([routerLink]="['']") {{con.date | date:'dd-MM-yyyy'}}
+            span.course-summary
+              |{{scholar.degree}} {{scholar.name}} {{scholar.surname}}
+        .col-lg-3.content
+          button.form-control.btn-success([routerLink]="['/cons/apply/', con.id]") Pieteikties
