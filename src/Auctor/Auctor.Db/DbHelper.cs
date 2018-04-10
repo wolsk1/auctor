@@ -4,19 +4,22 @@
 
     public static class DbHelper
     {
-        public static NpgsqlConnection GetDBConnection()
+        public static NpgsqlConnection GetDBConnection(bool useAuctor = true)
         {
-            var connection = new NpgsqlConnection(ConnectionStrings.AuctorConnection);
+            var constr = useAuctor
+                ? ConnectionStrings.AuctorConnection
+                : ConnectionStrings.PostConnection;
+            var connection = new NpgsqlConnection(constr);
             connection.Open();
 
             return connection;
         }
 
-        public static NpgsqlCommand CreateCommand()
+        public static NpgsqlCommand CreateCommand(bool useAuctor = true)
         {
             return new NpgsqlCommand
             {
-                Connection = GetDBConnection()
+                Connection = GetDBConnection(useAuctor)
             };
         }
 

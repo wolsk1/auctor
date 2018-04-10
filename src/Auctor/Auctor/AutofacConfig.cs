@@ -23,6 +23,8 @@
                .As<IRepository<Consultation>>();
             builder.RegisterType<EventRepository>()
                .As<IRepository<ConsultationEvent>>();
+            builder.RegisterType<ClientRepository>()
+               .As<IRepository<Client>>();
         }
 
         private static void RegisterControllers(ContainerBuilder builder)
@@ -30,6 +32,8 @@
             builder.RegisterType<DbController>()
                 .AsSelf();            
             builder.RegisterType<ConsultationController>()
+                .AsSelf();
+            builder.RegisterType<ClientController>()
                 .AsSelf();
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());

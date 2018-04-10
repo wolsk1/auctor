@@ -1,13 +1,20 @@
 div
   nav.block.block-menu.navigation.menu--main(
-    role="navigation", 
+    role="navigation",
     aria-labelledby="block-galvenaizvelne-2-menu",
     id="block-galvenaizvelne-2")
     h2.visually-hidden(id="block-galvenaizvelne-2-menu") Galvenā izvēlne
     .content
       ul.menu.menu-level--0
         li
-          a.nav-link(routerLink="/cons" routerLinkActive="active") Konsultācijas
+          a.nav-link(id="cons-link" routerLink="/cons" routerLinkActive="active") Konsultācijas
         li
-          a.nav-link(routerLink="/events" routerLinkActive="active") Notikumi
+          a.nav-link(id="events-link" routerLink="/events" routerLinkActive="active") Notikumi
+      .clearfix
+    .content
+      ul.menu.menu-level--0
+        li
+          a.nav-link(id="stud-courses-link" routerLink="/courses" routerLinkActive="active") Kursi
+        li
+          a.nav-link(id="stud-cons-link" routerLink="/student" routerLinkActive="active") Konsultācijas
       .clearfix

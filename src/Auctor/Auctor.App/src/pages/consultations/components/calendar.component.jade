@@ -1,0 +1,16 @@
+main.column.main-content(id="content" role="main")
+  section.section
+    .block-mainpagecontent
+      article(role="article")
+        |{{month}}        
+        .row
+          .col-lg-1 Pir
+          .col-lg-1 Otr
+          .col-lg-1 Tre
+          .col-lg-1 Cet
+          .col-lg-1 Pie
+          .col-lg-1 Ses
+          .col-lg-1 Sve
+        .row(*ngFor="let week of weeks")
+          .col-lg-1(*ngFor="let day of week")
+          |{{day}}

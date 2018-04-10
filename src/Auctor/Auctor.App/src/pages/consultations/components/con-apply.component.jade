@@ -1,0 +1,35 @@
+.panel.panel.panel-default
+  .panel-heading Reģistrēties konsultācijai
+  .panel-body
+    .row
+      .col-xs-12.col-lg-2
+        label Datums      
+      .col-xs-12.col-lg-2
+        label Priekšmets      
+      .col-xs-12.col-lg-2
+        label Pasniedzējs      
+    .row
+      .col-xs-12.col-lg-2
+        |{{conDate | date: 'dd-MM-yyyy HH:mm'}}
+      .col-xs-12.col-lg-2        
+        |Maģistra darbs (InfT6004)
+      .col-xs-12.col-lg-2      
+        |Svetlana Atslēga
+    hr
+    .row
+      .col-xs-12.col-lg-2
+          label Apmeklējuma mērķis
+      .col-xs-12.col-lg-3
+        v-select(                    
+            [items]='events',            
+            [default-value]="eventsDefaultValue",
+            [display-member]="'name'",
+            [value-member]="'id'",
+            [return-value-only]="!!false",
+            (selected)="setEvent($event)")
+    hr
+    .row
+      .col-lg-2
+        button.form-control.btn-success((click)="save()")
+          |Reģistrēties
+      

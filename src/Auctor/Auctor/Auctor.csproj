@@ -64,11 +64,16 @@
     <Compile Include="AutofacConfig.cs" />
     <Compile Include="AutofacInitializer.cs" />
     <Compile Include="ConnectionStrings.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\ConsultationController.cs" />
     <Compile Include="Controllers\DbController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AppSettings.cs" />
+    <Compile Include="Repos\Client.cs" />
+    <Compile Include="Repos\ClientRepo.cs" />
+    <Compile Include="Repos\IProvider.cs" />
+    <Compile Include="Repos\NpgProvider.cs" />
     <Compile Include="SettingsHelper.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Repos\ConsultationsRepository.cs" />

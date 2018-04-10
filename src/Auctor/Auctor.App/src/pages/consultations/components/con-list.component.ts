@@ -22,7 +22,7 @@ export class ConListComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.titleService.setTitle('consultations');
+        this.titleService.setTitle('Konsultāciju saraksts');
         this.consultations.getConsultations(this.lecturerId).subscribe(
             cons => this.cons = cons);
     }

@@ -6,6 +6,8 @@ import { ComponentModule } from '../../components';
 
 import { ConListComponent } from './components/con-list.component';
 import { ConItemComponent } from './components/con-item.component';
+import { ConViewComponent } from './components/con-view.component';
+import { ConApplyComponent } from './components/con-apply.component';
 import { routing } from './consultations.routing';
 
 @NgModule({
@@ -19,8 +21,10 @@ import { routing } from './consultations.routing';
     providers: [
     ],
     declarations: [        
-        ConListComponent
-        ,ConItemComponent
+        ConListComponent,
+        ConItemComponent,
+        ConViewComponent,
+        ConApplyComponent
     ],
     exports: []
 })

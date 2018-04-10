@@ -1,8 +1,9 @@
 import * as _ from 'lodash';
 import {
     Component,
-    OnInit    
+    OnInit
 } from '@angular/core';
+import './footer.component.less'
 
 @Component({
     selector: 'auctor-footer',

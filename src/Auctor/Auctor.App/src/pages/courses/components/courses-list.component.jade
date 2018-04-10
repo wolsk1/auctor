@@ -1,0 +1,18 @@
+.panel.panel.panel-default
+  .panel-heading
+    h2 Priekšmetu saraksts      
+  .panel-body
+    //- .first šo vajag pirmajam ierakstam
+    .coursebox.clearfix.odd(*ngFor="let course of courses")
+      .row      
+        .col-lg-3.info
+          h3.coursename
+            a([routerLink]="['cons', course.code]") {{course.name}}
+            span.course-summary
+              a([href]="course.summary", target="_blank") {{course.code}}                
+        .col-lg-9.content
+          h4 Mācībspēki
+          ul.teachers(*ngIf="course.scholars")
+            li(*ngFor="let scholar of course.scholars")
+              |{{scholar.degree}} {{scholar.name}} {{scholar.surname}}
+     

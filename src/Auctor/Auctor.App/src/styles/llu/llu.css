@@ -364,18 +364,18 @@ table.highlighted-images tr td img {
     border-right: 1px solid #ffd800
 }
 
-header#header {
+/* header#header {
     width: 100%;
     margin: 0
-}
-
+} */
+/*
 header#header div .secondaryMenu {
     background: #eee;
     height: 30px;
     overflow: hidden
-}
+} */
 
-header#header div .secondaryMenu h2 {
+/* header#header div .secondaryMenu h2 {
     display: none
 }
 
@@ -544,9 +544,9 @@ header#header .main-header-content .block-menu ul.menu-level--0 {
 header#header .main-header-content .block-menu ul.menu-level--0>li {
     float: left;
     text-align: right
-}
+} */
 
-header#header .main-header-content .block-menu ul.menu-level--0>li a.super-state {
+/* header#header .main-header-content .block-menu ul.menu-level--0>li a.super-state {
     background: #ffd800;
     padding: 7px 10px 3px;
     -webkit-border-radius: 20px;
@@ -561,14 +561,14 @@ header#header .main-header-content .block-menu ul.menu-level--0>li a.super-state
     border-bottom: 2px solid transparent;
     background: #07944a;
     color: #fff
-}
+} */
 
-header#header .main-header-content .block-menu ul.menu-level--0>li:hover>a {
+/* header#header .main-header-content .block-menu ul.menu-level--0>li:hover>a {
     border-bottom: 2px solid #ffd800;
     color: #07944a
-}
+} */
 
-header#header .main-header-content .block-menu ul.menu-level--0>li a {
+/* header#header .main-header-content .block-menu ul.menu-level--0>li a {
     color: #000;
     font-size: 15px;
     font-weight: 500;
@@ -576,8 +576,8 @@ header#header .main-header-content .block-menu ul.menu-level--0>li a {
     display: inline-block;
     padding: 7px 10px 3px;
     border-bottom: 2px solid transparent
-}
-
+} */
+/*
 header#header .main-header-content .block-menu ul.menu-level--0>li ul.menu-level--1 {
     display: none;
     position: absolute;
@@ -827,7 +827,7 @@ header#header-mobile .header-mobile--languages-select a.lang-dropdown {
     -webkit-background-size: 30%;
     -moz-background-size: 30%;
     background-size: 30%
-}
+} */
 
 nav#nav-mobile {
     display: none;
@@ -3541,7 +3541,7 @@ hr.lineBottom {
     }
 }
 
-.custom--submenu--block:nth-child(1) .institute-img-block {
+/* .custom--submenu--block:nth-child(1) .institute-img-block {
     background-image: url(/themes/custom/LLU/images/usable/faculty/img_priekuli.gif)
 }
 
@@ -3559,31 +3559,31 @@ hr.lineBottom {
 
 .custom--submenu--block:nth-child(2) .faculty-img-block {
     background-image: url(/themes/custom/LLU/images/usable/faculty/img_mf.gif)
-}
+} */
 
-.custom--submenu--block:nth-child(3) .faculty-img-block {
+/* .custom--submenu--block:nth-child(3) .faculty-img-block {
     background-image: url(/themes/custom/LLU/images/usable/faculty/img_vmf.gif)
-}
+} */
 
-.custom--submenu--block:nth-child(4) .faculty-img-block {
+/* .custom--submenu--block:nth-child(4) .faculty-img-block {
     background-image: url(/themes/custom/LLU/images/usable/faculty/img_tf.gif)
-}
+} */
 
-.custom--submenu--block:nth-child(5) .faculty-img-block {
+/* .custom--submenu--block:nth-child(5) .faculty-img-block {
     background-image: url(/themes/custom/LLU/images/usable/faculty/img_ptf.gif)
-}
+} */
 
-.custom--submenu--block:nth-child(6) .faculty-img-block {
+/* .custom--submenu--block:nth-child(6) .faculty-img-block {
     background-image: url(/themes/custom/LLU/images/usable/faculty/img_lif.gif)
-}
+} */
 
-.custom--submenu--block:nth-child(7) .faculty-img-block {
+/* .custom--submenu--block:nth-child(7) .faculty-img-block {
     background-image: url(/themes/custom/LLU/images/usable/faculty/img_itf.gif)
-}
+} */
 
-.custom--submenu--block:nth-child(8) .faculty-img-block {
+/* .custom--submenu--block:nth-child(8) .faculty-img-block {
     background-image: url(/themes/custom/LLU/images/usable/faculty/img_esaf.gif)
-}
+} */
 
 #block-views-block-izvelnes-punktu-saistitie-raksti-block-1-3 .views-row:hover {
     background-color: #eee;

@@ -1,4 +1,43 @@
-h1 Default
+main.column.main-content(id="content" role="main")
+  section.section
+    .block-mainpagecontent
+      article(role="article")
+        .row
+          .form-group.col-lg-5
+            input.form-control(type="text", [(ngModel)]="searchText", placeholder="search text")
+          .col-lg-2
+            label Meklēt pēc:
+          .col-xs-12.col-lg-3
+            v-select(                    
+                [items]='searchOptions',
+                [init-selected-item]="defaultSearchOption",
+                [display-member]="'name'",
+                [value-member]="'id'",
+                [return-value-only]="!!false",
+                (selected)="setSearchOption($event)")
+        hr
+        .row
+          .col-lg-2
+            button Meklēt
+        hr
+        .row
+          .col-lg-2
+            h1 Pasniedzēji
+        hr        
+        .panel.panel.panel-default
+          .panel-heading
+            .row
+              .col-lg-3 Vārds
+              .col-lg-3 Uzvārds
+              .col-lg-2 Fakultāte
+              .col-lg-2 Katedra              
+          .panel-body
+            .row.g-row(*ngFor="let lecturer of lecturers; let last = last; let first = first;", 
+                      [ngClass]="{'last': last, 'first': first}")      
+              .col-lg-3 {{lecturer?.name}}
+              .col-lg-3 {{lecturer?.surname}}
+              .col-lg-3 {{lecturer?.faculty}}
+              .col-lg-2 {{lecturer?.department}}
 
 
-
+              
