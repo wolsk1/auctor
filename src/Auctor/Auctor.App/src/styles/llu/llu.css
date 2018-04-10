@@ -364,18 +364,18 @@ table.highlighted-images tr td img {
     border-right: 1px solid #ffd800
 }
 
-header#header {
+/* header#header {
     width: 100%;
     margin: 0
-}
-
+} */
+/*
 header#header div .secondaryMenu {
     background: #eee;
     height: 30px;
     overflow: hidden
-}
+} */
 
-header#header div .secondaryMenu h2 {
+/* header#header div .secondaryMenu h2 {
     display: none
 }
 
@@ -544,9 +544,9 @@ header#header .main-header-content .block-menu ul.menu-level--0 {
 header#header .main-header-content .block-menu ul.menu-level--0>li {
     float: left;
     text-align: right
-}
+} */
 
-header#header .main-header-content .block-menu ul.menu-level--0>li a.super-state {
+/* header#header .main-header-content .block-menu ul.menu-level--0>li a.super-state {
     background: #ffd800;
     padding: 7px 10px 3px;
     -webkit-border-radius: 20px;
@@ -561,14 +561,14 @@ header#header .main-header-content .block-menu ul.menu-level--0>li a.super-state
     border-bottom: 2px solid transparent;
     background: #07944a;
     color: #fff
-}
+} */
 
-header#header .main-header-content .block-menu ul.menu-level--0>li:hover>a {
+/* header#header .main-header-content .block-menu ul.menu-level--0>li:hover>a {
     border-bottom: 2px solid #ffd800;
     color: #07944a
-}
+} */
 
-header#header .main-header-content .block-menu ul.menu-level--0>li a {
+/* header#header .main-header-content .block-menu ul.menu-level--0>li a {
     color: #000;
     font-size: 15px;
     font-weight: 500;
@@ -576,8 +576,8 @@ header#header .main-header-content .block-menu ul.menu-level--0>li a {
     display: inline-block;
     padding: 7px 10px 3px;
     border-bottom: 2px solid transparent
-}
-
+} */
+/*
 header#header .main-header-content .block-menu ul.menu-level--0>li ul.menu-level--1 {
     display: none;
     position: absolute;
@@ -827,7 +827,7 @@ header#header-mobile .header-mobile--languages-select a.lang-dropdown {
     -webkit-background-size: 30%;
     -moz-background-size: 30%;
     background-size: 30%
-}
+} */
 
 nav#nav-mobile {
     display: none;

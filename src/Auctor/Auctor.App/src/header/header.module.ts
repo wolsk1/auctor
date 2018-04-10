@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+import './header.less';
 import { NavigationModule } from '../navigation/navigation.module';
 import { HeaderComponent } from './header.component';
 
 @NgModule({
-    imports: [       
+    imports: [
         RouterModule,
         BrowserModule,
         CommonModule,
@@ -17,10 +18,10 @@ import { HeaderComponent } from './header.component';
         HttpModule,
         NavigationModule
     ],
-    declarations: [        
-        HeaderComponent  
+    declarations: [
+        HeaderComponent
     ],
-    exports: [        
+    exports: [
         HeaderComponent
     ]
 })
