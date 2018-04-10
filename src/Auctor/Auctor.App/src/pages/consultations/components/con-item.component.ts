@@ -29,7 +29,7 @@ export class ConItemComponent implements OnInit {
   rooms: any[];
   type: string = "add";
   selectedRoom: string;
-  
+  formLabel: string;
 
   public ngOnInit(): void {
     this.route.data.subscribe(data => {
@@ -52,24 +52,30 @@ export class ConItemComponent implements OnInit {
     this.model.roomId = room.id;
     if(this.model.capacity < 1){
       this.model.capacity = room.capacity;
-    } 
+    }
   }
 
   private save(): void {
     if (this.type == "add") {
       this.consultations.addConsultation(this.model).subscribe();
+
     }
     else {
       this.consultations.updateConsultation(this.model).subscribe();
+
     }
   }
 
-  private setupForm(): void {    
-    if (this.type == "edit" ) {
-      this.consultations.getConsultation(this.model.id).subscribe(consultation => {
-        this.model = new Consultation();
-        this.selectedRoom = consultation.roomId;        
-      });
+  private setupForm(): void {
+    if (this.type == "add") {
+      this.formLabel = "Pievienot";
+      return;
     }
+
+    this.consultations.getConsultation(this.model.id).subscribe(consultation => {
+      this.model = new Consultation();
+      this.selectedRoom = consultation.roomId;
+    });
+    this.formLabel = "Labot";
   }
 }
