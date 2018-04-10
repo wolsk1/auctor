@@ -3,56 +3,40 @@ header.header(id="header" role="banner" aria-label="Site header")
         .secondaryMenu
             .secondaryMenu__container
                 div
-                    .search-block-form(data-drupal-selector="search-block-form" id="block-meklesanasforma" role="search")
-                        .search--btn
-                        form(action="http://www.llu.lv/lv/search/node" method="get" id="search-block-form" accept-charset="UTF-8" style="display: none;")
-                            .js-form-item.form-item.js-form-type-search.form-item-keys.js-form-item-keys.form-no-label
-                                label.visually-hidden(for="edit-keys") Meklēt
-                                input.form-search(title="Ievadiet terminus, kurus meklēt." data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128")
-                            .form-actions.js-form-wrapper.form-wrapper(data-drupal-selector="edit-actions" id="edit-actions")
-                                input.button.js-form-submit.form-submit(data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Meklēt")
-                        hr.lineBottom
-                    .language-switcher-language-url(id="block-valoduparsledzejs" role="navigation")
-                        ul.language-selector
-                            li.en(hreflang="en" data-drupal-link-system-path="<front>")
-                                a.language-link(href="http://www.llu.lv/en" hreflang="en" data-drupal-link-system-path="<front>")
-                                    |EN
-                            li.lv.is-active(hreflang="lv" data-drupal-link-system-path="<front>")
-                                a.language-link.is-active(href="http://www.llu.lv/lv" hreflang="lv" data-drupal-link-system-path="<front>")
-                                    |LV
+                    //- This will be enabled later with multi lang support
+                    //- .language-switcher-language-url(id="block-valoduparsledzejs" role="navigation")
+                    //-     ul.language-selector
+                    //-         li.en(hreflang="en" data-drupal-link-system-path="<front>")
+                    //-             a.language-link(href="http://www.llu.lv/en" hreflang="en" data-drupal-link-system-path="<front>")
+                    //-                 |EN
+                    //-         li.lv.is-active(hreflang="lv" data-drupal-link-system-path="<front>")
+                    //-             a.language-link.is-active(href="http://www.llu.lv/lv" hreflang="lv" data-drupal-link-system-path="<front>")
+                    //-                 |LV
                     nav.block.block-menu.navigation.menu--secondary-menu(role="navigation" aria-labelledby="block-secondarymenu-menu" id="block-secondarymenu")
                         h2.visually-hidden(id="block-secondarymenu-menu") Secondary menu
                         .content
                             ul
                                 li
-                                    a(href="https://lais.llu.lv" target="_blank" rel="nofollow")
-                                        |LLU IS
+                                    a(href="#" target="_blank" rel="nofollow")
+                                        |Lietotājs
                                         span
                                         span.element-invisible
                                 li
-                                    a(href="http://estudijas.llu.lv/" target="_blank" rel="nofollow")
-                                        |E-studijas
+                                    a(href="#" target="_blank" rel="nofollow")
+                                        |Iziet
+                                        span
+                                        span.element-invisible
+                            .clearfix
+                        .content
+                            ul
+                                li
+                                    a(href="#" target="_blank" rel="nofollow")
+                                        |Students
                                         span
                                         span.element-invisible
                                 li
-                                    a(href="http://llufb.llu.lv/" target="_blank" rel="nofollow")
-                                        |Bibliotēka
-                                        span
-                                        span.element-invisible
-                                li
-                                    a(href="http://www.llu.lv/lv/projekti" target="" data-drupal-link-system-path="node/801")
-                                        |Projekti
-                                li
-                                    a(href="http://www.jelgavaspils.lv" target="_blank" rel="nofollow")
-                                        |Jelgavas pils
-                                        span
-                                        span.element-invisible
-                                li
-                                    a(href="http://www.llu.lv/lv/iepirkumi/list" target="" data-drupal-link-system-path="iepirkumi/list")
-                                        |Iepirkumi
-                                li
-                                    a(href="https://webmail.llu.lv/login.php?new_lang=lv_LV" target="_blank" rel="nofollow")
-                                        |E-pasts
+                                    a(href="#" target="_blank" rel="nofollow")
+                                        |Admins
                                         span
                                         span.element-invisible
                             .clearfix
@@ -61,30 +45,5 @@ header.header(id="header" role="banner" aria-label="Site header")
                 .site-branding(id="block-sitebranding")
                     a.site-branding__logo([routerLink]="['']" title="Sākums" rel="home")
                         img(src="http://www.llu.lv/themes/custom/LLU/lv_logo.svg" alt="Sākums")
-            .social-media
-                div
-                    div(id="block-socialbuttons-2")
-                        div
-                            a(href="http://www.draugiem.lv/llu/" target="_blank" rel="nofollow")
-                                img.align-center(alt="draugiem" data-entity-type="file" data-entity-uuid="d22618f4-c952-4050-9b04-4da8eb076bf4" 
-                                    src="http://www.llu.lv/sites/default/files/inline-images/icon_draugiem.png" title="Draugiem")
-                            a(href="https://www.facebook.com/latvijaslauksaimniecibasuniversitate/?fref=ts" target="_blank" rel="nofollow")
-                                img.align-center(alt="facebook" data-entity-type="file" data-entity-uuid="c7ef8631-febe-4306-b800-e2fb214c35cd" 
-                                    src="http://www.llu.lv/sites/default/files/inline-images/icon_facebook.png" title="Facebook")
-                            a(href="https://www.instagram.com/lluniversitate/" target="_blank" rel="nofollow")
-                                img.align-center(alt="Instagram" data-entity-type="file" data-entity-uuid="44b0629d-c918-417c-bd6b-bbbf6cc1f1c1" 
-                                    src="http://www.llu.lv/sites/default/files/inline-images/new_instgram_1.png" title="Instagram")
-                            a(href="https://www.youtube.com/user/lluvideo" target="_blank" rel="nofollow")
-                                img.align-center(alt="Youtube" data-entity-type="file" data-entity-uuid="d71b9066-414b-4336-b500-004473bddd88"
-                                    src="http://www.llu.lv/sites/default/files/inline-images/icon_youtube.png" title="YouTube")
-                            a(href="https://twitter.com/llu_lv" target="_blank" rel="nofollow")
-                                img.align-center(alt="twitter" data-entity-type="file" data-entity-uuid="bbaf0e2e-aa03-48e5-a500-cfbdb8fa6e35"
-                                    src="http://www.llu.lv/sites/default/files/inline-images/icon_twitter.png" title="Twitter")
-                            a(href="http://www.llu.lv/llu-portala-rss-plusmas")
-                                img.align-center(alt="RSS" data-entity-type="file" data-entity-uuid="abc519b5-da41-4ad4-ac3e-62fcd9dfaa8b" 
-                                    src="http://www.llu.lv/sites/default/files/inline-images/icon_rss.png" title="RSS")
-                            a(href="https://soundcloud.com/jelgava-student-podcast" target="_blank" rel="nofollow")
-                                img.align-center(alt="podcast" data-entity-type="file" data-entity-uuid="7c9dcb9d-f082-44ec-8856-95c1c129a4a3"
-                                    src="http://www.llu.lv/sites/default/files/inline-images/new_podcast_0.png" title="Jelgava Student Podcast")
             auctor-nav
-                
+

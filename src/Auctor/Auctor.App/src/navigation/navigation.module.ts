@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import './navigation.less';
 import { NavigationComponent } from './navigation.component'
 
 @NgModule({
     imports: [
       RouterModule
     ],
-    declarations: [        
-      NavigationComponent  
+    declarations: [
+      NavigationComponent
     ],
-    exports: [        
+    exports: [
       NavigationComponent
     ]
 })
