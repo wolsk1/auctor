@@ -12,15 +12,16 @@ import { AppComponent } from './app.component';
 import { appRouting } from './app.routing';
 import { FooterModule } from '../footer/footer.module';
 import { HeaderModule } from '../header/header.module';
-import { 
+import {
     DefaultModule,
     EventsModule,
     ConsultationsModule,
-    CoursesModule
+    CoursesModule,
+    StudentModule
 } from '../pages';
 
 @NgModule({
-    imports: [               
+    imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
@@ -30,9 +31,10 @@ import {
         ComponentModule,
         ErrorPageModule,
         DefaultModule,
-        EventsModule,        
+        EventsModule,
         ConsultationsModule,
-        CoursesModule        
+        CoursesModule,
+        StudentModule
     ],
     declarations: [
         AppComponent
